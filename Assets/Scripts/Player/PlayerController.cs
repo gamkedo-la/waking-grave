@@ -72,8 +72,9 @@ public class PlayerController : MonoBehaviour
         if(isGrounded) {
             rb2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         } else if(isSliding) {
-            rb2D.AddForce(new Vector2(wallJumpForce * wallJumpAngle.x * (isFacingRight ? 1 : -1), wallJumpForce * wallJumpAngle.y),ForceMode2D.Impulse);
-            Flip();
+            // Disable movement for player to move away from wall
+            rb2D.AddForce(new Vector2(wallJumpForce * wallJumpAngle.x * (isFacingRight ? -1 : 1), wallJumpForce * wallJumpAngle.y),ForceMode2D.Impulse);
+            // Flip();
         }
     }
 
@@ -96,7 +97,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Move() {
-        if ( !isDashing)
+        if (!isOnWall && !isDashing)
         {
             rb2D.velocity = new Vector2(horizontal * speed, rb2D.velocity.y);
         }
@@ -121,7 +122,7 @@ public class PlayerController : MonoBehaviour
         isSliding = IsOnWall() && !IsGrounded() && rb2D.velocity.y < 0 && isPressingAgainstWall;
         if(isSliding) {
             rb2D.velocity = new Vector2(rb2D.velocity.x, wallSlideSpeed);
-            Flip();
+            // Flip();
         }
     }
 
