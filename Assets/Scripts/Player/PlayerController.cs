@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
     [Header("Dash")]
     private bool isDashing;
 
-
     // TODO: Only set can jump to false when touching the ground
 
     private void Awake() {
