@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     [Header("Wall Jump")]
     [SerializeField] private float wallJumpForce = 18f;
     [SerializeField] private Vector2 wallJumpAngle;
+    private bool isWallJumping;
 
     [Header("Dash")]
     private bool isDashing;
@@ -85,8 +86,7 @@ public class PlayerController : MonoBehaviour
         if(isGrounded) {
             rb2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         } else if(isSliding) {
-            // Disable movement for player to move away from wall
-            rb2D.AddForce(new Vector2(wallJumpForce * wallJumpAngle.x * (isFacingRight ? -1 : 1), wallJumpForce * wallJumpAngle.y),ForceMode2D.Impulse);
+            StartCoroutine(WallJump());
             // Flip();
         }
     }
@@ -95,6 +95,13 @@ public class PlayerController : MonoBehaviour
         if(!isDashing && isGrounded){
             StartCoroutine(Dash());
         }
+    }
+
+    private IEnumerator WallJump() {
+        isWallJumping = true;
+        rb2D.AddForce(new Vector2(wallJumpForce * wallJumpAngle.x * (isFacingRight ? -1 : 1), wallJumpForce * wallJumpAngle.y),ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.2f);
+        isWallJumping = false;
     }
 
     private IEnumerator Dash() {
@@ -110,7 +117,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Move() {
-        if (!isOnWall && !isDashing)
+        if (!isOnWall && !isDashing && !isWallJumping)
         {
             rb2D.velocity = new Vector2(horizontal * speed, rb2D.velocity.y);
         }
