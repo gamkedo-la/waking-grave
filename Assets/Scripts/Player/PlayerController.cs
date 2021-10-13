@@ -34,12 +34,17 @@ public class PlayerController : MonoBehaviour
     [Header("Dash")]
     private bool isDashing;
 
+    private ParticleSystem dustParticles;
+
     // TODO: Only set can jump to false when touching the ground
 
     private void Awake() {
         platformerInputs = new PlatformerInputs();
         rb2D = GetComponent<Rigidbody2D>();
         wallJumpAngle.Normalize();
+        
+        dustParticles = GetComponentInChildren<ParticleSystem>(); // fixme: we might need more than one
+        if (!dustParticles) Debug.Log("Player is missing a dust particle system!");
     }
 
     private void OnEnable() {
@@ -65,6 +70,15 @@ public class PlayerController : MonoBehaviour
         horizontal = movementAction.ReadValue<Vector2>().x;
         isGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize ,0, groundLayer);
         isOnWall = Physics2D.OverlapBox(wallCheck.position, wallCheckSize, 0, wallLayer);
+
+        // toggle the dust particles on and off
+        if (isGrounded) {
+            // note: only actually emits when we are in motion
+            if (!dustParticles.isEmitting) dustParticles.Play(true);
+        } else {
+            // don't emit while in the air
+            if (dustParticles.isEmitting) dustParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        }
     }
 
     private void Jump(InputAction.CallbackContext obj) {
