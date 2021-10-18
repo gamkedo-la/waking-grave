@@ -109,10 +109,10 @@ TextureImporter:
       name: Graveyard_Background_Sprites_Tilemap_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 32
-        width: 26
-        height: 19
+        x: 1
+        y: 11
+        width: 32
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,9 +131,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 35
-        y: 32
-        width: 26
-        height: 38
+        y: 11
+        width: 31
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,9 +152,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 68
-        y: 32
-        width: 23
-        height: 36
+        y: 11
+        width: 32
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: Graveyard_Background_Sprites_Tilemap_3
       rect:
         serializedVersion: 2
-        x: 99
-        y: 32
-        width: 27
-        height: 37
+        x: 102
+        y: 11
+        width: 32
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +193,10 @@ TextureImporter:
       name: Graveyard_Background_Sprites_Tilemap_4
       rect:
         serializedVersion: 2
-        x: 136
-        y: 32
+        x: 140
+        y: 11
         width: 16
-        height: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
