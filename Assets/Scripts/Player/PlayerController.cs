@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2D;
     private PlatformerInputs platformerInputs;
     private InputAction movementAction;
+    private Animator anim;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
     [SerializeField] Vector2 groundCheckSize;
@@ -42,8 +43,9 @@ public class PlayerController : MonoBehaviour
     private void Awake() {
         platformerInputs = new PlatformerInputs();
         rb2D = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         wallJumpAngle.Normalize();
-        
+
         dustParticles = GetComponentInChildren<ParticleSystem>(); // fixme: we might need more than one
         if (!dustParticles) Debug.Log("Player is missing a dust particle system!");
     }
@@ -114,6 +116,11 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
         Move();
         WallSlide();
+    }
+
+    private void LateUpdate() {
+        anim.SetBool("Idle", horizontal == 0);
+        anim.SetBool("IsGrounded", isGrounded);
     }
 
     private void Move() {
