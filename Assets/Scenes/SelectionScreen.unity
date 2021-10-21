@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 33807881}
   - component: {fileID: 33807880}
   - component: {fileID: 33807883}
+  - component: {fileID: 33807884}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -255,6 +256,27 @@ MonoBehaviour:
   movementSpeed: 2
   health: 0
   max_health: 0
+--- !u!50 &33807884
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33807879}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &137994701
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +359,7 @@ GameObject:
   - component: {fileID: 146332523}
   - component: {fileID: 146332522}
   - component: {fileID: 146332521}
+  - component: {fileID: 146332524}
   m_Layer: 0
   m_Name: Zombie (1)
   m_TagString: Untagged
@@ -457,6 +480,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &146332524
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146332519}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &422315707
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +875,7 @@ GameObject:
   - component: {fileID: 1051784454}
   - component: {fileID: 1051784453}
   - component: {fileID: 1051784452}
+  - component: {fileID: 1051784455}
   m_Layer: 0
   m_Name: Zombie (2)
   m_TagString: Untagged
@@ -951,6 +996,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1051784455
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051784450}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1139497866
 GameObject:
   m_ObjectHideFlags: 0
