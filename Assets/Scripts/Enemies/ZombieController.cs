@@ -29,12 +29,14 @@ public class ZombieController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player")) {
+            Debug.Log("Zombie is aware of the player!");
             playerPosition = other.transform;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         if(other.CompareTag("Player")) {
+            Debug.Log("Zombie is no longer aware of the player!");
             playerPosition = null;
         }
     }
