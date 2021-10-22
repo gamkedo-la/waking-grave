@@ -7,6 +7,7 @@ public class ZombieController : MonoBehaviour
     // FIXME: why serialize a private field?
     // why not make it public so unity acts normal?
     // why? private makes it so other code can't access these values
+    [Header("Zombie AI Settings")]
     [SerializeField] private Vector2[] positions;
     [SerializeField] private Transform playerPosition;     // Will only use if corrupted
     [SerializeField] private float movementSpeed;
@@ -15,10 +16,16 @@ public class ZombieController : MonoBehaviour
     [SerializeField] private int max_health;  // Might turn to a constant later on
     
     // public fields
+    [Header("Particle Prefabs to Instantiate")]
     public GameObject spawnIfAlerted;
-    public GameObject spawnIfBumped;
-    public GameObject spawnIfShot;
-    public GameObject spawnIfKilled;
+    public GameObject spawnIfBumped; // UNIMPLEMENTED
+    public GameObject spawnIfShot; // UNIMPLEMENTED
+    public GameObject spawnIfKilled; // UNIMPLEMENTED
+    
+    [Header("Things we turn on and off")]
+    public GameObject activeIfAlterted;
+    public GameObject activeIfDamaged; // UNIMPLEMENTED
+    public GameObject activeIfWandering; // UNIMPLEMENTED
 
     // actual truely private variables
     private int posIndex;
@@ -45,6 +52,9 @@ public class ZombieController : MonoBehaviour
                 // spawn an "!" above their head and slightly in front of them in the z plane
                 Instantiate(spawnIfAlerted, new Vector3(transform.position.x,transform.position.y+1,transform.position.z+0.1f), Quaternion.identity);
             }
+            // turn on the red eyes!
+            if (activeIfAlterted) activeIfAlterted.SetActive(true);
+            // start following the player
             playerPosition = other.transform;
         }
     }
@@ -52,6 +62,9 @@ public class ZombieController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) {
         if(other.CompareTag("Player")) {
             Debug.Log("Zombie is no longer aware of the player!");
+            // turn off the red eyes!
+            if (activeIfAlterted) activeIfAlterted.SetActive(false);
+            // stop following the player
             playerPosition = null;
         }
     }
