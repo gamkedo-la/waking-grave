@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour
     private void Jump(InputAction.CallbackContext obj) {
         if(isGrounded) {
             rb2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            anim.SetTrigger("Jump");
         } else if(isSliding) {
             StartCoroutine(WallJump());
             // Flip();
@@ -121,6 +122,7 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate() {
         anim.SetBool("Idle", horizontal == 0);
         anim.SetBool("IsGrounded", isGrounded);
+        anim.SetFloat("VerticalVelocity", rb2D.velocity.y);
     }
 
     private void Move() {
