@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Dash")]
     private bool isDashing;
+    private bool isDashJumping;
 
     private ParticleSystem dustParticles;
 
@@ -71,8 +72,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         horizontal = movementAction.ReadValue<Vector2>().x;
+        bool wasGrounded = isGrounded;
         isGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize ,0, groundLayer);
         isOnWall = Physics2D.OverlapBox(wallCheck.position, wallCheckSize, 0, wallLayer);
+
+        if(!wasGrounded && isGrounded){
+            isDashJumping = false;
+        }
 
         // toggle the dust particles on and off
         if (isGrounded) {
@@ -87,6 +93,7 @@ public class PlayerController : MonoBehaviour
     private void Jump(InputAction.CallbackContext obj) {
         if(isGrounded) {
             rb2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            if(isDashing) isDashJumping = true;
             anim.SetTrigger("Jump");
         } else if(isSliding) {
             StartCoroutine(WallJump());
@@ -126,7 +133,14 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Move() {
-        if (!isOnWall && !isDashing && !isWallJumping)
+        if(isDashJumping) {
+            // if changes direction for dash
+            if( !isFacingRight && horizontal > 0f || isFacingRight && horizontal < 0f) {
+                isDashJumping = false;
+            }
+        }
+
+        if (!isOnWall && !isDashing && !isWallJumping && !isDashJumping)
         {
             rb2D.velocity = new Vector2(horizontal * speed, rb2D.velocity.y);
         }
