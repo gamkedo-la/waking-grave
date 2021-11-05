@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 3200003070481956088}
   - component: {fileID: 3200003070481956086}
   - component: {fileID: 3200003070481956087}
+  - component: {fileID: 4501261901856782138}
   m_Layer: 0
   m_Name: SkeletonTorso
   m_TagString: Untagged
@@ -155,7 +156,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04801911, y: 0.073875666}
+  m_Offset: {x: 0.06474084, y: 0.06272781}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -166,8 +167,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.41638315, y: 0.6453972}
+  m_Size: {x: 0.33834827, y: 0.6231015}
   m_EdgeRadius: 0
+--- !u!114 &4501261901856782138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200003070481956090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8862a69ef88f93640b36d6d8adf47f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3200003071229457961
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +193,7 @@ GameObject:
   - component: {fileID: 3200003071229458007}
   - component: {fileID: 3200003071229457958}
   - component: {fileID: 3200003071229457959}
+  - component: {fileID: 4501261900324683242}
   m_Layer: 0
   m_Name: SkeletonLegBack
   m_TagString: Untagged
@@ -287,7 +301,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.21793288, y: -0.6537988}
+  m_Offset: {x: 0.279246, y: -0.7485553}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -298,8 +312,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.43115819, y: 0.6823349}
+  m_Size: {x: 0.06327981, y: 0.49282193}
   m_EdgeRadius: 0
+--- !u!114 &4501261900324683242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200003071229457961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8862a69ef88f93640b36d6d8adf47f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3200003071968239970
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +337,8 @@ GameObject:
   - component: {fileID: 3200003071968239969}
   - component: {fileID: 3200003071968239968}
   - component: {fileID: 3200003071968239998}
-  - component: {fileID: 3200003071968239999}
+  - component: {fileID: 4501261901195586226}
+  - component: {fileID: 6141240352020302489}
   m_Layer: 0
   m_Name: SkeletonHead
   m_TagString: Untagged
@@ -406,8 +433,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &3200003071968239999
-BoxCollider2D:
+--- !u!114 &4501261901195586226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200003071968239970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8862a69ef88f93640b36d6d8adf47f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &6141240352020302489
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -419,19 +458,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.25, y: 0.56}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.2508263, y: 0.5573917}
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.6182009}
-  m_EdgeRadius: 0
+  m_Radius: 0.3255561
 --- !u!1 &3200003071994031637
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +473,7 @@ GameObject:
   - component: {fileID: 3200003071994031635}
   - component: {fileID: 3200003071994031633}
   - component: {fileID: 3200003071994031634}
+  - component: {fileID: 4501261901221373407}
   m_Layer: 0
   m_Name: SkeletonArmPointing
   m_TagString: Untagged
@@ -551,7 +581,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.47649735, y: -0.06279427}
+  m_Offset: {x: -0.37059295, y: -0.034924686}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -562,8 +592,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.91873705, y: 0.3720578}
+  m_Size: {x: 0.6177455, y: 0.2048403}
   m_EdgeRadius: 0
+--- !u!114 &4501261901221373407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200003071994031637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8862a69ef88f93640b36d6d8adf47f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3200003072048002826
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +618,7 @@ GameObject:
   - component: {fileID: 3200003072048002824}
   - component: {fileID: 3200003072048002822}
   - component: {fileID: 3200003072048002823}
+  - component: {fileID: 4501261901107576010}
   m_Layer: 0
   m_Name: SkeletonArmRaised
   m_TagString: Untagged
@@ -683,7 +726,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.48019114, y: 0.65379876}
+  m_Offset: {x: 0.48019114, y: 0.37510294}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -694,8 +737,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7783732, y: 0.6897224}
+  m_Size: {x: 0.7783732, y: 0.13233078}
   m_EdgeRadius: 0
+--- !u!114 &4501261901107576010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200003072048002826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8862a69ef88f93640b36d6d8adf47f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3200003072165901265
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,6 +763,7 @@ GameObject:
   - component: {fileID: 3200003072165901279}
   - component: {fileID: 3200003072165901294}
   - component: {fileID: 3200003072165901295}
+  - component: {fileID: 4501261901259028514}
   m_Layer: 0
   m_Name: SkeletonLegFront
   m_TagString: Untagged
@@ -815,7 +871,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18838266, y: -0.6279423}
+  m_Offset: {x: -0.121495634, y: -0.66695976}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -826,5 +882,17 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.37205786, y: 0.6306224}
+  m_Size: {x: 0.12680548, y: 0.5525875}
   m_EdgeRadius: 0
+--- !u!114 &4501261901259028514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200003072165901265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8862a69ef88f93640b36d6d8adf47f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
