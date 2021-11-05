@@ -18,9 +18,11 @@ public class ZombieController : MonoBehaviour
     // public fields
     [Header("Particle Prefabs to Instantiate")]
     public GameObject spawnIfAlerted;
-    public GameObject spawnIfBumped; // UNIMPLEMENTED
+    public GameObject spawnIfTouched; // UNIMPLEMENTED
     public GameObject spawnIfShot; // UNIMPLEMENTED
     public GameObject spawnIfKilled; // UNIMPLEMENTED
+    public bool dieIfTouched = false;
+    public bool dieIfJumpedOn = false;
     
     [Header("Things we turn on and off")]
     public GameObject activeIfAlterted;
@@ -45,6 +47,7 @@ public class ZombieController : MonoBehaviour
         }
     }
 
+    // player just entered detection range
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player")) {
             Debug.Log("Zombie is aware of the player!");
@@ -59,13 +62,56 @@ public class ZombieController : MonoBehaviour
         }
     }
 
+    // player just left detection range
     private void OnTriggerExit2D(Collider2D other) {
         if(other.CompareTag("Player")) {
-            Debug.Log("Zombie is no longer aware of the player!");
+            Debug.Log(gameObject.name+" is no longer aware of the player!");
             // turn off the red eyes!
             if (activeIfAlterted) activeIfAlterted.SetActive(false);
             // stop following the player
             playerPosition = null;
+        }
+    }
+
+    // something just bumped into us
+    private void OnCollisionEnter2D(Collision2D coll) {
+
+        // FIXME:
+        // maybe check if the PROJECTILE/WEAPON MESH hit us, not the player?
+        if(coll.gameObject.CompareTag("Player")) {
+            
+            Debug.Log(gameObject.name+" touched the player!");
+
+            if (spawnIfTouched) {
+                Instantiate(spawnIfTouched, new Vector3(transform.position.x,transform.position.y+1,transform.position.z+0.1f), Quaternion.identity);
+            }
+
+            if (dieIfTouched) {
+                health = 0;
+            }
+
+            if (dieIfJumpedOn) {
+                // is player above zombie?
+                float voffset = coll.gameObject.transform.position.y - transform.position.y;
+                if (voffset > 0.5f) {
+                    Debug.Log(gameObject.name+" was jumped on top of by player!");
+                    health = 0;
+                } else {
+                    Debug.Log(gameObject.name+" below player dist: "+voffset);
+                }
+            }
+
+            // FIXME: this needs more work - flesh this out for score etc
+            // also put this check elsewhere in case we lose health other ways
+            if ((dieIfTouched || dieIfJumpedOn) && health<=0) {
+                Debug.Log(gameObject.name+" has zero health! Dying!");
+                if (spawnIfKilled) {
+                    Instantiate(spawnIfKilled, new Vector3(transform.position.x,transform.position.y+1,transform.position.z+0.1f), Quaternion.identity);
+                }
+                 // vanish immediately! (FIXME: wait for an anim to finish?)
+                 Destroy(gameObject/* ,delayinseconds */); 
+            }
+
         }
     }
 
