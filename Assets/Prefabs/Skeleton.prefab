@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6762097642529594976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 0, z: 0}
+  m_LocalPosition: {x: -0.25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7467573455048431703}
@@ -77,7 +77,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  upDownSize: 0.1
+  upDownSize: 0.2
   upDownSpeed: 10
   wobbleLeftRight:
     serializedVersion: 2
@@ -112,7 +112,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  leftRightSize: 0.25
+  leftRightSize: 0.3
   leftRightSpeed: 5
 --- !u!212 &6762097642529594910
 SpriteRenderer:
@@ -192,7 +192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6762097643195374488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0, z: 0}
+  m_LocalPosition: {x: -0.05, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7467573455048431703}
@@ -243,7 +243,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  upDownSize: 0.1
+  upDownSize: 0.2
   upDownSpeed: 10
   wobbleLeftRight:
     serializedVersion: 2
@@ -610,8 +610,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  leftRightSize: 0.1
-  leftRightSpeed: 0.7
+  leftRightSize: 0.15
+  leftRightSpeed: 9
 --- !u!212 &6762097643266148649
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -690,7 +690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6762097643312488259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0, z: 0}
+  m_LocalPosition: {x: -0.1, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7467573455048431703}
@@ -741,8 +741,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  upDownSize: 0.05
-  upDownSpeed: 2
+  upDownSize: 0.2
+  upDownSpeed: 4
   wobbleLeftRight:
     serializedVersion: 2
     m_Curve:
@@ -777,7 +777,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   leftRightSize: 0.1
-  leftRightSpeed: 10
+  leftRightSpeed: 1.5
 --- !u!212 &6762097643312488257
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1023,7 +1023,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7467573455048431706}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
