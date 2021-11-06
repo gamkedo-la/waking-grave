@@ -32,6 +32,24 @@ public class ZombieController : MonoBehaviour
     // actual truely private variables
     private int posIndex;
 
+    [Header("SFX")]
+    //SFX
+    [SerializeField] AudioClip zombieIdleAudioClip;
+    private Camera mainCamera;
+    
+
+    private void Start()
+    {
+        if (gameObject.name == "Skeleton")
+        {
+            return;
+        }
+        GetComponent<AudioSource>().clip = zombieIdleAudioClip;
+        GetComponent<AudioSource>().volume = 1f;
+        GetComponent<AudioSource>().Play();
+
+        mainCamera = Camera.main;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -59,8 +77,12 @@ public class ZombieController : MonoBehaviour
             if (activeIfAlterted) activeIfAlterted.SetActive(true);
             // start following the player
             playerPosition = other.transform;
+
+            mainCamera.GetComponent<CameraAudioScript>().PlayRandomZombieAlertSFX();
         }
     }
+
+    
 
     // player just left detection range
     private void OnTriggerExit2D(Collider2D other) {
