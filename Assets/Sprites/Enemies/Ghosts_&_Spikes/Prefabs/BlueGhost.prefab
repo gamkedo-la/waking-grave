@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1019826535098995184}
   - component: {fileID: 5464014610289070190}
   - component: {fileID: 6750207654186120693}
+  - component: {fileID: 8158718825800696425}
   m_Layer: 0
   m_Name: BlueGhost
   m_TagString: Untagged
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1943608901
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -537498845459870924, guid: e1e3d6d811c46784788d16a6d9eb4d4c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -158,3 +159,16 @@ MonoBehaviour:
   moveSpeed: 2
   timeBetweenMove: 1
   timeToMove: 1
+--- !u!114 &8158718825800696425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6331764389490871975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a37c1b4e29e32543a2a2e865b0bcb65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fireball: {fileID: 3671440603003152971, guid: d458cd4a3c9302f4da4cfb3c4d41d794, type: 3}
