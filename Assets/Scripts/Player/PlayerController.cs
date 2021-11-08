@@ -150,19 +150,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool IsGrounded() {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    }
-
-    private bool IsOnWall() {
-        return Physics2D.OverlapBox(wallCheck.position, wallCheckSize, 0, wallLayer);
-    }
-
     void WallSlide () {
         bool isPressingAgainstWall = (isFacingRight && movementAction.ReadValue<Vector2>().x > 0) ||
                                     (!isFacingRight && movementAction.ReadValue<Vector2>().x < 0);
 
-        isSliding = IsOnWall() && !IsGrounded() && rb2D.velocity.y < 0 && isPressingAgainstWall;
+        isSliding = isOnWall && !isGrounded && rb2D.velocity.y < 0 && isPressingAgainstWall;
         if(isSliding) {
             rb2D.velocity = new Vector2(rb2D.velocity.x, wallSlideSpeed);
             // Flip();
