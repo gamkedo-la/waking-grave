@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4917132533280844577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 610084125376929919}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &610084125376929919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4917132533280844577}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.305, y: 0.134, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5810425167383462808}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5810425167378872244
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +74,8 @@ GameObject:
   - component: {fileID: 5810425167383462810}
   - component: {fileID: 5810425167383462811}
   - component: {fileID: 5810425167383462813}
+  - component: {fileID: 1927376148}
+  - component: {fileID: 7257967763578319094}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -65,6 +97,7 @@ Transform:
   - {fileID: 5810425167634592022}
   - {fileID: 5810425167378872247}
   - {fileID: 5810425167697319580}
+  - {fileID: 610084125376929919}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -136,7 +169,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   groundCheck: {fileID: 5810425167634592022}
-  groundCheckSize: {x: 0.4, y: 0.08}
+  groundCheckSize: {x: 0.3, y: 0.08}
   jumpForce: 6
   speed: 6
   wallSlideSpeed: -2
@@ -213,6 +246,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!81 &1927376148
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5810425167383462823}
+  m_Enabled: 1
+--- !u!114 &7257967763578319094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5810425167383462823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ead295e547ad243bd180aadab387e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 610084125376929919}
+  bulletPrefab: {fileID: 3567241743382967997, guid: 5b18dde7e8056c44f883fdc13508a6e4, type: 3}
 --- !u!1 &5810425167634592023
 GameObject:
   m_ObjectHideFlags: 0
