@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-	public float speed = 20f;
-	public int damage = 40;
-	public Rigidbody2D rb2D;
+	[SerializeField] private float speed = 20f;
+	[SerializeField] private int damage = 40;
+	private Rigidbody2D rb2D;
 
-	// Use this for initialization
-	void Start () {
-		rb2D.velocity = transform.right * speed;
+	// Use this for initializationç
+	public void SetDirection( bool isRight ) {
+		rb2D = GetComponent<Rigidbody2D>();
+		rb2D.velocity = transform.right * (isRight ? 1 : -1) * speed;
 	}
 
 	void OnTriggerEnter2D (Collider2D hitInfo)

@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 5810425167383462811}
   - component: {fileID: 5810425167383462813}
   - component: {fileID: 1927376148}
-  - component: {fileID: 7257967763578319094}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -180,6 +179,8 @@ MonoBehaviour:
   wallCheckSize: {x: 0.1, y: 1}
   wallJumpForce: 10
   wallJumpAngle: {x: 0.5, y: 0.95}
+  firePoint: {fileID: 610084125376929919}
+  bulletPrefab: {fileID: 3567241743382967997, guid: 5b18dde7e8056c44f883fdc13508a6e4, type: 3}
 --- !u!50 &5810425167383462810
 Rigidbody2D:
   serializedVersion: 4
@@ -254,20 +255,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5810425167383462823}
   m_Enabled: 1
---- !u!114 &7257967763578319094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5810425167383462823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3ead295e547ad243bd180aadab387e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 610084125376929919}
-  bulletPrefab: {fileID: 3567241743382967997, guid: 5b18dde7e8056c44f883fdc13508a6e4, type: 3}
 --- !u!1 &5810425167634592023
 GameObject:
   m_ObjectHideFlags: 0

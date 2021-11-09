@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
     private bool isDashJumping;
 
     private ParticleSystem dustParticles;
+    [Header("Shooting")]
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private GameObject bulletPrefab;
 
     // TODO: Only set can jump to false when touching the ground
 
@@ -60,12 +63,16 @@ public class PlayerController : MonoBehaviour
 
         platformerInputs.Player.Dash.performed += AttemptDash;
         platformerInputs.Player.Dash.Enable();
+
+        platformerInputs.Player.Shoot.performed += Shoot;
+        platformerInputs.Player.Shoot.Enable();
     }
 
     private void OnDisable() {
         movementAction.Disable();
         platformerInputs.Player.Jump.Disable();
         platformerInputs.Player.Dash.Disable();
+        platformerInputs.Player.Shoot.Disable();
     }
 
     // Update is called once per frame
@@ -165,6 +172,12 @@ public class PlayerController : MonoBehaviour
     private void Flip() {
         isFacingRight = !isFacingRight;
         transform.Rotate(0, 180f, 0);
+    }
+
+    private void Shoot(InputAction.CallbackContext obj)
+    {
+        GameObject temp  = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        temp.GetComponent<Bullet>().SetDirection(isFacingRight);
     }
 
     private void OnDrawGizmosSelected() {
