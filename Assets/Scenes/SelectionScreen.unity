@@ -10303,10 +10303,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7467573455048431702, guid: ca43115f12ee58842a753aec748240dd, type: 3}
-      propertyPath: spawnIfKilled
-      value: 
-      objectReference: {fileID: 1593531351925895187, guid: 093d25d2df595e8498d51e80be553f22, type: 3}
     - target: {fileID: 7467573455048431703, guid: ca43115f12ee58842a753aec748240dd, type: 3}
       propertyPath: m_RootOrder
       value: 6

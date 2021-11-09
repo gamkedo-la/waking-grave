@@ -1061,12 +1061,13 @@ MonoBehaviour:
   spawnIfAlerted: {fileID: 0}
   spawnIfTouched: {fileID: 0}
   spawnIfShot: {fileID: 0}
-  spawnIfKilled: {fileID: 0}
+  spawnIfKilled: {fileID: 1593531351925895187, guid: 093d25d2df595e8498d51e80be553f22, type: 3}
   dieIfTouched: 0
   dieIfJumpedOn: 1
   activeIfAlterted: {fileID: 0}
   activeIfDamaged: {fileID: 0}
   activeIfWandering: {fileID: 0}
+  zombieIdleAudioClip: {fileID: 0}
 --- !u!61 &7467573455048431701
 BoxCollider2D:
   m_ObjectHideFlags: 0
