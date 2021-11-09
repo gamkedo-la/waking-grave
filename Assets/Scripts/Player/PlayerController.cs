@@ -73,10 +73,11 @@ public class PlayerController : MonoBehaviour
     {
         horizontal = movementAction.ReadValue<Vector2>().x;
         bool wasGrounded = isGrounded;
+        bool wasOnWall = isOnWall;
         isGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize ,0, groundLayer);
         isOnWall = Physics2D.OverlapBox(wallCheck.position, wallCheckSize, 0, wallLayer);
 
-        if(!wasGrounded && isGrounded){
+        if(!wasGrounded && isGrounded || !wasOnWall && isOnWall ){
             isDashJumping = false;
         }
 
@@ -116,7 +117,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Dash() {
         isDashing = true;
-        rb2D.AddForce(new Vector2((isFacingRight ? 1: -1) * speed * 2, 0), ForceMode2D.Impulse);
+        rb2D.AddForce(new Vector2((isFacingRight ? 1: -1) * speed , 0), ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.2f);
         isDashing = false;
     }
