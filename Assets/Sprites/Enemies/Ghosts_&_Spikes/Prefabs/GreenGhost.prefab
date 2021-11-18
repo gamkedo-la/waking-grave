@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 711458563853587667}
   - component: {fileID: -3681140422966694301}
   - component: {fileID: -3492075844679876191}
+  - component: {fileID: -1225200994232328237}
   m_Layer: 0
   m_Name: GreenGhost
   m_TagString: Untagged
@@ -158,3 +159,17 @@ MonoBehaviour:
   moveSpeed: 2
   timeBetweenMove: 1
   timeToMove: 1
+  waitToReload: 2
+--- !u!114 &-1225200994232328237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8799740019467734850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64631259ceea57c45b48eb60c027f565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fireball: {fileID: 3671440603003152971, guid: d458cd4a3c9302f4da4cfb3c4d41d794, type: 3}

@@ -159,6 +159,7 @@ MonoBehaviour:
   moveSpeed: 2
   timeBetweenMove: 1
   timeToMove: 1
+  waitToReload: 2
 --- !u!114 &8158718825800696425
 MonoBehaviour:
   m_ObjectHideFlags: 0
