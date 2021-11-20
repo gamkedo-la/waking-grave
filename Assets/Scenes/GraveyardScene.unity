@@ -1042,7 +1042,7 @@ AudioSource:
   m_GameObject: {fileID: 597060596}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7037370521893704835, guid: de337e706a80340ecbda761acb5e8b28, type: 2}
   m_audioClip: {fileID: 8300000, guid: e1495d0aeb76a42f880858e5b85376ec, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -31961,10 +31961,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
-    - target: {fileID: 14531325648781827, guid: 90de1b2a882ee7446a9a645a880ec500, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 14531325648781838, guid: 90de1b2a882ee7446a9a645a880ec500, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -32008,6 +32004,10 @@ PrefabInstance:
     - target: {fileID: 14531325648781838, guid: 90de1b2a882ee7446a9a645a880ec500, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179109377996389899, guid: 90de1b2a882ee7446a9a645a880ec500, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90de1b2a882ee7446a9a645a880ec500, type: 3}
