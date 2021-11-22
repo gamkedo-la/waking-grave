@@ -14,6 +14,7 @@ public class ZombieController : MonoBehaviour
     [SerializeField] private float chaseSpeed;
     [SerializeField] private int health;
     [SerializeField] private int max_health;  // Might turn to a constant later on
+    public bool isCorrupted;
     
     // public fields
     [Header("Particle Prefabs to Instantiate")]
@@ -47,6 +48,11 @@ public class ZombieController : MonoBehaviour
         GetComponent<AudioSource>().clip = zombieIdleAudioClip;
         GetComponent<AudioSource>().volume = 1f;
         GetComponent<AudioSource>().Play();
+
+        // Set wander positions
+        positions = new Vector2[2];
+        positions[0] = transform.GetChild(0).position;
+        positions[1] = transform.GetChild(1).position;
 
         mainCamera = Camera.main;
     }
@@ -135,10 +141,5 @@ public class ZombieController : MonoBehaviour
             }
 
         }
-    }
-
-    private void OnDrawGizmosSelected() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(positions[0], positions[1]);
     }
 }
