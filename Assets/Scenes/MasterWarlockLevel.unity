@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 1054439749}
   - component: {fileID: 1054439748}
   - component: {fileID: 1054439751}
+  - component: {fileID: 1054439752}
   m_Layer: 0
   m_Name: MasterWarlock
   m_TagString: Untagged
@@ -240,6 +241,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
+--- !u!58 &1054439752
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054439747}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000023841858, y: -0.8823528}
+  serializedVersion: 2
+  m_Radius: 2.5294116
 --- !u!1001 &1374332306
 PrefabInstance:
   m_ObjectHideFlags: 0
