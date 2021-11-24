@@ -18,9 +18,18 @@ public class WarlockRetreating : BaseState
     public override void UpdateLogic()
     {
         base.UpdateLogic();
-        if (_sm.transform.position.x < warlocksRetreatPosition.transform.position.x)
-        {
-            _sm.transform.position.x += speed;
-        }
+        // FIXME: warlocksRetreatPosition needs implementing
+        //if (_sm.transform.position.x < warlocksRetreatPosition.transform.position.x)
+        //{
+           
+            // error
+            // _sm.transform.position.x += speed;
+            // you can't change positions in unity this way ---^
+            // you have to make a brand new vector3 or call a method
+
+            // alternative that hopefully works:
+            //_sm.transform.position = new Vector3(_sm.transform.position.x+speed,_sm.transform.position.y,_sm.transform.position.z);
+            
+        //}
     }
 }
