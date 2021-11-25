@@ -23,8 +23,6 @@ public class WarlockRetreating : BaseState
     {
         base.UpdateLogic();
 
-        Debug.Log("warlocksRetreatPosition.transform.position.x: " + warlocksRetreatPosition.transform.position.x);
-
         if (_sm.transform.position.x != warlocksRetreatPosition.transform.position.x)
         {
             _sm.transform.position = Vector2.MoveTowards(_sm.transform.position, warlocksRetreatPosition.transform.position, speed);
@@ -33,7 +31,6 @@ public class WarlockRetreating : BaseState
             _sm.transform.position.y - warlocksRetreatPosition.transform.position.y < 0.1)
         {
             _sm.ChangeState(_sm.idleState);
-            Debug.Log("warlocksRetreatPosition: " + warlocksRetreatPosition);
             warlocksRetreatPosition.GetComponent<RetreatPositionScript>().ResetPosition();
         }
     }
