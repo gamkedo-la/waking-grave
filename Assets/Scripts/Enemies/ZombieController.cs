@@ -14,8 +14,7 @@ public class ZombieController : MonoBehaviour
     [SerializeField] private float chaseSpeed;
     [SerializeField] private int health;
     [SerializeField] private int max_health;  // Might turn to a constant later on
-    public bool isCorrupted;
-    
+    public bool isCorrupted; // if zombie is not corrupted he wont chase player
     // public fields
     [Header("Particle Prefabs to Instantiate")]
     public GameObject spawnIfAlerted;
@@ -41,18 +40,19 @@ public class ZombieController : MonoBehaviour
     
     private void Start()
     {
-        if (gameObject.name == "Skeleton")
-        {
-            return;
-        }
-        GetComponent<AudioSource>().clip = zombieIdleAudioClip;
-        GetComponent<AudioSource>().volume = 1f;
-        GetComponent<AudioSource>().Play();
-
         // Set wander positions
         positions = new Vector2[2];
         positions[0] = transform.GetChild(0).position;
         positions[1] = transform.GetChild(1).position;
+
+        if (gameObject.name == "Skeleton")
+        {
+            return;
+        }
+
+        GetComponent<AudioSource>().clip = zombieIdleAudioClip;
+        GetComponent<AudioSource>().volume = 1f;
+        GetComponent<AudioSource>().Play();
 
         mainCamera = Camera.main;
     }
@@ -64,7 +64,7 @@ public class ZombieController : MonoBehaviour
         } else {
             transform.position = Vector2.MoveTowards(transform.position, positions[posIndex], movementSpeed * Time.deltaTime);
 
-            if(Vector2.Distance(transform.position, positions[posIndex]) < 0.1f) {
+            if(Vector2.Distance(transform.position, positions[posIndex]) < 0.3f) {
                 posIndex = posIndex == 1 ? 0 : 1; // since there are only 2 posible positions
                 transform.Rotate(0, 180f, 0);
             }
@@ -73,7 +73,7 @@ public class ZombieController : MonoBehaviour
 
     // player just entered detection range
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Player")) {
+        if(other.CompareTag("Player") && isCorrupted) {
             Debug.Log("Zombie is aware of the player!");
             if (spawnIfAlerted) {
                 // spawn an "!" above their head and slightly in front of them in the z plane
