@@ -37,8 +37,8 @@ public class ZombieController : MonoBehaviour
     //SFX
     [SerializeField] AudioClip zombieIdleAudioClip;
     private Camera mainCamera;
-    
 
+    
     private void Start()
     {
         if (gameObject.name == "Skeleton")

@@ -18,6 +18,5 @@ public class WarlockMoving : BaseState
     {
         base.UpdateLogic();
         _sm.transform.position =  startPos + (Vector3.right * Mathf.Sin(Time.timeSinceLevelLoad/2*speed) * xDeviation - Vector3.up * Mathf.Sin(Time.timeSinceLevelLoad * speed) * yDeviation);
-        
     }
 }

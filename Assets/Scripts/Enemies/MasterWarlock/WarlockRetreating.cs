@@ -2,17 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WarlockRetreat : MonoBehaviour
+public class WarlockRetreating : BaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    WarlockSM _sm;
+    float speed = 0.125f;
+    
+
+    [SerializeField] GameObject warlocksRetreatPosition;
+    public WarlockRetreating(WarlockSM stateMachine) : base("WarlockRetreating", stateMachine)
     {
-        
+        _sm = stateMachine;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Enter()
     {
-        
+        base.Enter();
+    }
+
+    public override void UpdateLogic()
+    {
+        base.UpdateLogic();
+
+        warlocksRetreatPosition = GameObject.FindGameObjectWithTag("WarlockRetreatPosition");
+
+        if (_sm.transform.position != warlocksRetreatPosition.transform.position)
+        {
+            _sm.transform.position = Vector2.MoveTowards(_sm.transform.position, warlocksRetreatPosition.transform.position, speed);
+        }
+        else if (_sm.transform.position.x - warlocksRetreatPosition.transform.position.x < 0.1 &&
+            _sm.transform.position.y - warlocksRetreatPosition.transform.position.y < 0.1)
+        {
+            _sm.ChangeState(_sm.idleState);
+        }
     }
 }
