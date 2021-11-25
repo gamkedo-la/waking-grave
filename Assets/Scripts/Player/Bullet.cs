@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour {
 
 		// Instantiate(impactEffect, transform.position, transform.rotation);
 		Debug.Log("hitInfo.gameObject.name: " + hitInfo.gameObject.name);
-		if (hitInfo.gameObject.name != "Player")
+		if (hitInfo.gameObject.name != "Player" || hitInfo.gameObject.name != "Floor")
         {
 			Destroy(gameObject);
 		}
