@@ -1058,6 +1058,7 @@ MonoBehaviour:
   chaseSpeed: 3
   health: 1
   max_health: 1
+  isCorrupted: 1
   spawnIfAlerted: {fileID: 0}
   spawnIfTouched: {fileID: 0}
   spawnIfShot: {fileID: 0}
