@@ -5,6 +5,7 @@ using UnityEngine;
 public class MasterWarlockScript : MonoBehaviour
 {
     [SerializeField] ParticleSystem eldrichBlastParticleSystem;
+
     private WarlockSM _sm;
     private WarlockRetreating warlockRetreatingScript;
 
@@ -12,6 +13,8 @@ public class MasterWarlockScript : MonoBehaviour
     private Vector2 aimingCoordinates;
     private bool eldrichBlastMovingTowardsPlayer = false;
     private float eldrichBlastSpeed = 0.3f;
+
+    private bool warlockPreparingEldrichBlast = false;
 
     private void Start()
     {
@@ -28,12 +31,23 @@ public class MasterWarlockScript : MonoBehaviour
             if (Mathf.Abs(aimingCoordinates.x - eldrichBlastParticleSystem.gameObject.transform.position.x) > 0.1 &&
                 Mathf.Abs(aimingCoordinates.y - eldrichBlastParticleSystem.gameObject.transform.position.y) > 0.1)
             {
-                Debug.Log("inside eldrich blast check");
+                var shapeModuleOfParticleSystem = eldrichBlastParticleSystem.shape;
+                if (shapeModuleOfParticleSystem.angle > 0.3f)
+                {
+                    shapeModuleOfParticleSystem.angle -= 0.05f;
+                }
+                if (shapeModuleOfParticleSystem.radius > 0.4f)
+                {
+                    shapeModuleOfParticleSystem.radius -= 0.05f;
+                }
+                
+
                 eldrichBlastParticleSystem.gameObject.transform.position =
                     Vector2.MoveTowards(eldrichBlastParticleSystem.gameObject.transform.position, aimingCoordinates, eldrichBlastSpeed);
             }
             else
             {
+                
                 eldrichBlastParticleSystem.gameObject.transform.position = gameObject.transform.position;
                 eldrichBlastMovingTowardsPlayer = false;
                 eldrichBlastParticleSystem.gameObject.SetActive(false);
@@ -44,6 +58,20 @@ public class MasterWarlockScript : MonoBehaviour
         {
             eldrichBlastParticleSystem.gameObject.transform.position = gameObject.transform.position;
         }
+
+        if (warlockPreparingEldrichBlast)
+        {
+            var shapeModuleOfParticleSystem = eldrichBlastParticleSystem.shape;
+            
+            if (shapeModuleOfParticleSystem.angle < 1f)
+            {
+                shapeModuleOfParticleSystem.angle += 0.025f;
+            }
+            if (shapeModuleOfParticleSystem.radius < 1f)
+            {
+                shapeModuleOfParticleSystem.radius += 0.0125f;
+            }
+        }
     }
 
     private void GetAimingCoordinates()
@@ -53,6 +81,7 @@ public class MasterWarlockScript : MonoBehaviour
 
     private void FireEldrichBlast()
     {
+        warlockPreparingEldrichBlast = false;
         GetAimingCoordinates();
         eldrichBlastMovingTowardsPlayer = true;
     }
@@ -61,7 +90,11 @@ public class MasterWarlockScript : MonoBehaviour
         yield return new WaitForSeconds(2);
         if (eldrichBlastParticleSystem.gameObject.activeSelf == false)
         {
+            warlockPreparingEldrichBlast = true;
             eldrichBlastParticleSystem.gameObject.SetActive(true);
+            var shapeModuleOfParticleSystem = eldrichBlastParticleSystem.shape;
+            shapeModuleOfParticleSystem.angle = 0f;
+            shapeModuleOfParticleSystem.radius = 0f;
         }
         yield return new WaitForSeconds(2);
         FireEldrichBlast();

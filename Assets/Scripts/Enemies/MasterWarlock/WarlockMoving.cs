@@ -30,7 +30,7 @@ public class WarlockMoving : BaseState
 
         float elapsedTimeFloat = (float)stopWatch.ElapsedMilliseconds / 1000;
 
-        _sm.transform.position = centerMovementReferencePoint + (Vector3.right * Mathf.Sin( (elapsedTimeFloat) / 2 * speed) * xDeviation -
+        _sm.transform.position = centerMovementReferencePoint + (Vector3.right * Mathf.Sin((elapsedTimeFloat) / 2 * speed) * xDeviation -
                                               Vector3.up * Mathf.Sin(elapsedTimeFloat * speed) * yDeviation);
     }
 }
