@@ -101,7 +101,11 @@ public class MasterWarlockScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision with warlocks circle collider detected, warlock should be retreating");
+        Debug.Log(collision.gameObject.name);
         _sm.ChangeState(_sm.retreatingState);
+        if (collision.gameObject.name == "FlameBullet(Clone)")
+        {
+            Debug.Log("bullet collision detected");
+        }
     }
 }
