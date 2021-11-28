@@ -10491,6 +10491,10 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[11].Array.data[13].Y
       value: -40000100
       objectReference: {fileID: 0}
+    - target: {fileID: 1740792117710872967, guid: 7a517ee8719fa5349af4c1e53889fbb6, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1740792117710873017, guid: 7a517ee8719fa5349af4c1e53889fbb6, type: 3}
       propertyPath: m_Size.x
       value: 276
@@ -42402,7 +42406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4573304837133890953, guid: ca4a9aaae3a34a9479894849229b7ec6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 259.6927
+      value: 260.37
       objectReference: {fileID: 0}
     - target: {fileID: 4573304837133890953, guid: ca4a9aaae3a34a9479894849229b7ec6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -42499,6 +42503,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  hasCrashed: 0
+  isTackling: 0
 --- !u!50 &1381784453
 Rigidbody2D:
   serializedVersion: 4

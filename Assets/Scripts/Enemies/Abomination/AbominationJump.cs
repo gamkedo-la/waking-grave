@@ -5,9 +5,9 @@ using UnityEngine;
 public class AbominationJump : BaseState
 {
     private AbominationSM _sm;
-    private const int MAX_JUMPS = 5;
+    private const int MAX_JUMPS = 3;  // it will be multiplied by 2, i think 6 might be a bit too much but we'll see
     float jumpForce = 10f;
-    float horizontalSpeed = 5f;
+    float horizontalSpeed = 6f;
     int currentJumps;
     int jumpCounter;
     bool hasJumped;
@@ -21,7 +21,8 @@ public class AbominationJump : BaseState
     {
         base.Enter();
         jumpCounter = 0;
-        currentJumps = (int) Random.Range(1, MAX_JUMPS);
+        // for now the jumps will be a multiple of two as I'm unsure on how to detect the position in a clean way and which attacks to do from there
+        currentJumps = 4;
         isGrounded = false;
     }
 
@@ -31,10 +32,9 @@ public class AbominationJump : BaseState
         bool wasGrounded = isGrounded;
         isGrounded = Physics2D.OverlapBox(_sm.groundCheck.position, new Vector2(0.3f, 0.08f) , 0, _sm.groundLayer);
         if(isGrounded && !wasGrounded) {
-            _sm.rb2d.velocity = Vector2.zero;
+            _sm.rb2d.velocity = Vector2.zero; // velocity needs to be restarted otherwise previous velocities add up
             if(jumpCounter%2== 0 && jumpCounter != 0) {
-                _sm.isFacingRight = !_sm.isFacingRight;
-                _sm.GetComponent<SpriteRenderer>().flipX = _sm.isFacingRight;
+                _sm.Flip();
             }
             if(jumpCounter == currentJumps) {
                 stateMachine.ChangeState(_sm.tacklingState);
