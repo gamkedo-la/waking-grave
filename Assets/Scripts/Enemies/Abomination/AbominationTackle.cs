@@ -19,8 +19,6 @@ public class AbominationTackle : BaseState
         base.Enter();
         chargeSpeed = _sm.isFacingRight ? 10 : -10;
         _sm.hasCrashed = false;
-        UnityEngine.Debug.Log(chargeSpeed + " " + _sm.isFacingRight + " " + _sm.hasCrashed);
-
         sw.Restart();
     }
 
@@ -29,13 +27,14 @@ public class AbominationTackle : BaseState
         base.UpdateLogic();
         if(sw.ElapsedMilliseconds > 1000) {
             sw.Stop();
-            UnityEngine.Debug.Log(chargeSpeed + " " + _sm.isFacingRight + " " + _sm.hasCrashed);
             if(!_sm.hasCrashed) {
                 _sm.rb2d.velocity = new Vector2(chargeSpeed, 0f);
             } else {
                 _sm.Flip();
                 stateMachine.ChangeState(_sm.idleState);
             }
+        } else {
+            _sm.hasCrashed = false;
         }
     }
 }

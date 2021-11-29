@@ -35,8 +35,7 @@ public class AbominationSM : StateMachine
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.CompareTag("Wall") && currentState.name == "AbominationTackle") {
-            Debug.Log("choco");
+        if(other.gameObject.CompareTag("Wall")) {
             hasCrashed = true;
         }
     }
