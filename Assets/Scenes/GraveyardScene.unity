@@ -36166,7 +36166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687595610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 251, y: -9.5, z: -10}
+  m_LocalPosition: {x: 249.83, y: -9.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -42450,7 +42450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016073496429472158, guid: ca4a9aaae3a34a9479894849229b7ec6, type: 3}
       propertyPath: m_Name
-      value: MiniBossIdle
+      value: Abomination
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca4a9aaae3a34a9479894849229b7ec6, type: 3}
@@ -42505,6 +42505,10 @@ MonoBehaviour:
     m_Bits: 64
   hasCrashed: 0
   isTackling: 0
+  wallPrefabs:
+  - {fileID: 7694157644742422555, guid: cc673bcf970f1524e8343d4f07824000, type: 3}
+  - {fileID: 9193609784083270911, guid: 537e20f75401fa84a807aacadc338d2c, type: 3}
+  - {fileID: 8446032748594915068, guid: 3653dd5e771796646a26b3b06986c00d, type: 3}
 --- !u!50 &1381784453
 Rigidbody2D:
   serializedVersion: 4

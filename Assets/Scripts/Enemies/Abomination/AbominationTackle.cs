@@ -31,7 +31,7 @@ public class AbominationTackle : BaseState
                 _sm.rb2d.velocity = new Vector2(chargeSpeed, 0f);
             } else {
                 _sm.Flip();
-                stateMachine.ChangeState(_sm.idleState);
+                stateMachine.ChangeState(_sm.wallSpawnState);
             }
         } else {
             _sm.hasCrashed = false;
