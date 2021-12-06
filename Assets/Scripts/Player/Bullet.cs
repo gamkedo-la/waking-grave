@@ -12,18 +12,11 @@ public class Bullet : MonoBehaviour {
 		rb2D.velocity = transform.right * (isRight ? 1 : -1) * speed;
 	}
 
-	void OnTriggerEnter2D (Collider2D hitInfo)
-	{
-		// Enemy enemy = hitInfo.GetComponent<Enemy>();
-		// if (enemy != null)
-		// {
-		// 	enemy.TakeDamage(damage);
-		// }
-
-		// Instantiate(impactEffect, transform.position, transform.rotation);
-		Debug.Log("hitInfo.gameObject.name: " + hitInfo.gameObject.name);
-		if (hitInfo.gameObject.name != "Player" || hitInfo.gameObject.name != "Floor")
-        {
+	private void OnCollisionEnter2D(Collision2D other) {
+		if (other.gameObject.name != "Player" || other.gameObject.name != "Floor")
+      {
+			Debug.Log("hit: " + other.gameObject.name);
+			rb2D.velocity = Vector2.zero;
 			Destroy(gameObject);
 		}
 	}

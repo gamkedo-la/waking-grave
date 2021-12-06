@@ -4822,7 +4822,7 @@ GameObject:
   - component: {fileID: 6225846762486583673}
   m_Layer: 0
   m_Name: FlameBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4906,8 +4906,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84561c922cfb99346a83e2efe68f36bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  damage: 40
+  speed: 10
+  damage: 1
 --- !u!50 &2099358266171406698
 Rigidbody2D:
   serializedVersion: 4
