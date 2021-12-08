@@ -13,13 +13,11 @@ public class EnemyHealthManager : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.CompareTag("Bullet")) {
-            currentHealth--;
-            Debug.Log("was hit " + currentHealth );
-            if(currentHealth < 0) {
-                Destroy(gameObject);
-            }
+    public void GetDamaged(int damage) {
+        currentHealth -= damage;
+        Debug.Log("was hit " + currentHealth );
+        if(currentHealth < 0) {
+            Destroy(gameObject);
         }
     }
 }
