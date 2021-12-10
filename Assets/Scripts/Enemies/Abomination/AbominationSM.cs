@@ -44,6 +44,10 @@ public class AbominationSM : StateMachine
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other) {
+        // Add Logic to hurt player
+    }
+
     public void SpawnWall(int index) {
         GameObject wall = Instantiate(wallPrefabs[index], new Vector3 (transform.position.x + (isFacingRight ? 3 : -3), -14.5f + (0.5f*index) , 0), Quaternion.identity);
         wall.GetComponent<AbominationWall>().SetDirection(isFacingRight);
