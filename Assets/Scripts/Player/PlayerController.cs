@@ -42,6 +42,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
 
+    [Header("Damaged")]
+    [SerializeField] private Vector2 damagedForce;
+    [SerializeField] private float immuneTime;
+    private bool isDamaged;
+
     // TODO: Only set can jump to false when touching the ground
 
     private void Awake() {
@@ -130,8 +135,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        Move();
-        WallSlide();
+        if(!isDamaged) {
+            Move();
+            WallSlide();
+        }
     }
 
     private void LateUpdate() {
@@ -178,6 +185,21 @@ public class PlayerController : MonoBehaviour
     {
         GameObject temp  = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         temp.GetComponent<Bullet>().SetDirection(isFacingRight);
+    }
+
+    public void GetDamaged(float xPosition) {
+        if(!isDamaged) {
+            isDamaged = true;
+            int direction = xPosition > transform.position.x ? 1 : -1;
+            damagedForce.x =  damagedForce.x * direction;
+            rb2D.velocity = Vector2.zero;
+            rb2D.AddForce(damagedForce , ForceMode2D.Impulse);
+            anim.SetTrigger("getDamaged");
+        }
+    }
+
+    public void EnableDamage() {
+        isDamaged = false;
     }
 
     private void OnDrawGizmosSelected() {
