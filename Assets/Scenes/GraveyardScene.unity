@@ -37214,7 +37214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687595610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 250.22, y: -8.9, z: -10}
+  m_LocalPosition: {x: 0.6, y: 0.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -37227,13 +37227,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687595610}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37c44b1d7a0303c4b87b992d846496df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1340604277}
   dampTime: 0.15
+  followOffset: {x: 9, y: 3.24}
+  threshold: {x: 0, y: 0}
+  speed: 0
 --- !u!82 &687595615
 AudioSource:
   m_ObjectHideFlags: 0
@@ -45842,7 +45845,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10, y: 8.4375}
+    oldSize: {x: 10, y: 7.5}
     newSize: {x: 10, y: 8.4375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -73525,11 +73528,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5810425167383462808, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 240.6
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 5810425167383462808, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.26
+      value: -2.2
       objectReference: {fileID: 0}
     - target: {fileID: 5810425167383462808, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
       propertyPath: m_LocalPosition.z
