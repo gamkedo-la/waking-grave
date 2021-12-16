@@ -190,10 +190,10 @@ public class PlayerController : MonoBehaviour
     public void GetDamaged(float xPosition) {
         if(!isDamaged) {
             isDamaged = true;
-            int direction = xPosition > transform.position.x ? 1 : -1;
-            damagedForce.x =  damagedForce.x * direction;
             rb2D.velocity = Vector2.zero;
-            rb2D.AddForce(damagedForce , ForceMode2D.Impulse);
+            int direction = xPosition > transform.position.x ? -1 : 1;
+            Vector2 pushback = new Vector2(damagedForce.x * direction, damagedForce.y);
+            rb2D.AddForce(pushback , ForceMode2D.Impulse);
             anim.SetTrigger("getDamaged");
         }
     }
