@@ -84,7 +84,7 @@ public class ZombieController : MonoBehaviour
             // start following the player
             playerPosition = other.transform;
 
-            mainCamera.GetComponent<CameraAudioScript>().PlayRandomZombieAlertSFX();
+            // mainCamera.GetComponent<CameraAudioScript>().PlayRandomZombieAlertSFX(); TODO: FIX For Skeleton
         }
     }
 

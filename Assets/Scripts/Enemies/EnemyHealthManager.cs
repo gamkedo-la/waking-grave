@@ -9,7 +9,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     private void Awake() {
         if(!GetComponent<BoxCollider2D>()) {
-            Debug.LogError("No collider attached to enemy");
+            Debug.LogError("No collider attached to enemy" + transform.position + " " + !GetComponent<BoxCollider2D>() + " " + !GetComponent<CircleCollider2D>());
         }
     }
 

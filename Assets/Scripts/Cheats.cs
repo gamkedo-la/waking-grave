@@ -13,7 +13,7 @@ public class Cheats : MonoBehaviour
     }
 
     public void MoveToStartGraveyard() {
-        cam.position = new Vector3 (0.6f, 0.7f, -10);
+        cam.position = new Vector3 (0.6f, 1.5f, -10);
         cam.GetComponent<CameraFollow>().enabled = true;
         player.position = new Vector3(0.6f, -2.2f, 0);
     }
