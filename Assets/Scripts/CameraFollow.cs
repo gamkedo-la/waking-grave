@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour
     public Vector2 threshold;
     public float speed;
     private Rigidbody2D targetRb2d;
+    public float xBoundaryLeft;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class CameraFollow : MonoBehaviour
         float yDifference = Vector2.Distance(Vector2.right *  transform.position.y, Vector2.right * target.position.y);
 
         Vector3 newPos = transform.position;
-        if(Mathf.Abs(xDifference) >= threshold.x) {
+        if(Mathf.Abs(xDifference) >= threshold.x && target.position.x > xBoundaryLeft) { // dont follow player to the left edge
             newPos.x = target.position.x;
         }
 
