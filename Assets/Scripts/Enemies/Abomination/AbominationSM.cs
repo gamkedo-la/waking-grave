@@ -30,7 +30,7 @@ public class AbominationSM : StateMachine
 
     protected override BaseState GetInitialState()
     {
-        return idleState;
+        return wallSpawnState;
     }
 
     public void Flip() {
