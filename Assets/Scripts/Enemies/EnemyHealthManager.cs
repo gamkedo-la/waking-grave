@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealthManager : MonoBehaviour
 {
     public int maxHealth;
     public int currentHealth;
+    public Image healthBar;
 
     private void Awake() {
         if(!GetComponent<BoxCollider2D>()) {
@@ -15,7 +17,9 @@ public class EnemyHealthManager : MonoBehaviour
 
     public void GetDamaged(int damage) {
         currentHealth -= damage;
-        Debug.Log("was hit " + currentHealth );
+        if(healthBar) {
+            healthBar.fillAmount -= (1.0f / maxHealth);
+        }
         if(currentHealth < 0) {
             Destroy(gameObject);
         }
