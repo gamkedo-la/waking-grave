@@ -47144,7 +47144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016073496429472158, guid: ca4a9aaae3a34a9479894849229b7ec6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca4a9aaae3a34a9479894849229b7ec6, type: 3}
@@ -96649,6 +96649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1549750271}
   - component: {fileID: 1549750272}
+  - component: {fileID: 1549750273}
   m_Layer: 0
   m_Name: TriggerCheck
   m_TagString: Untagged
@@ -96683,7 +96684,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000039100647, y: 0.6714715}
+  m_Offset: {x: 0.4732523, y: 0.40329576}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -96694,8 +96695,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.2670755, y: 6.9686346}
+  m_Size: {x: 5.6263742, y: 6.6846833}
   m_EdgeRadius: 0
+--- !u!114 &1549750273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549750270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53614bc526efdf44eb871b43a706418c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1551935069
 GameObject:
   m_ObjectHideFlags: 0
@@ -97881,6 +97894,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5810425167383462822, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 940283423}
+    - target: {fileID: 5810425167383462822, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
+      propertyPath: maxHealth
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810425167383462822, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
       propertyPath: immuneTime
       value: 2
       objectReference: {fileID: 0}
@@ -97888,6 +97909,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 8201846058106914381, guid: f481172b1107a9b4e9361c9609eff707, type: 3}
+    - target: {fileID: 5810425167383462822, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
+      propertyPath: currentHealth
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5810425167383462822, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
       propertyPath: damagedForce.x
       value: 2

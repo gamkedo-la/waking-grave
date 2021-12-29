@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -42,9 +43,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
 
-    [Header("Damaged")]
+    [Header("Health Variables")]
     [SerializeField] private Vector2 damagedForce;
     [SerializeField] private float immuneTime;
+    [SerializeField] private int maxHealth;
+    [SerializeField] private int currentHealth;
+    [SerializeField] private Image healthBar;
     private bool isDamaged;
 
     // TODO: Only set can jump to false when touching the ground
@@ -197,6 +201,12 @@ public class PlayerController : MonoBehaviour
             int direction = xPosition > transform.position.x ? -1 : 1;
             Vector2 pushback = new Vector2(damagedForce.x * direction, damagedForce.y);
             rb2D.AddForce(pushback , ForceMode2D.Impulse);
+
+            currentHealth -= 1;
+            if(healthBar) {
+                healthBar.fillAmount -= (1.0f / maxHealth);
+            }
+            // TODO: Add restart logic when health < 0
             anim.SetTrigger("getDamaged");
         }
     }
