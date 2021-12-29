@@ -185,6 +185,9 @@ public class PlayerController : MonoBehaviour
     {
         GameObject temp  = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         temp.GetComponent<Bullet>().SetDirection(isFacingRight);
+        if(!isFacingRight) {
+            temp.GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 
     public void GetDamaged(float xPosition) {
