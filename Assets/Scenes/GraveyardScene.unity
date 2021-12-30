@@ -5833,6 +5833,7 @@ MonoBehaviour:
   stageWall: {fileID: 1851293631}
   bossHealthBar: {fileID: 75847208}
   cam: {fileID: 687595610}
+  camSpeed: 14
 --- !u!61 &224526744
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47340,7 +47341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016073496429472158, guid: ca4a9aaae3a34a9479894849229b7ec6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca4a9aaae3a34a9479894849229b7ec6, type: 3}
