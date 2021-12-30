@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private PlatformerInputs platformerInputs;
     private InputAction movementAction;
     private Animator anim;
+    [SerializeField] private CameraFollow cam;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
     [SerializeField] Vector2 groundCheckSize;
@@ -61,6 +62,10 @@ public class PlayerController : MonoBehaviour
 
         dustParticles = GetComponentInChildren<ParticleSystem>(); // fixme: we might need more than one
         if (!dustParticles) Debug.Log("Player is missing a dust particle system!");
+        if(CheckpointManager.instance != null && CheckpointManager.instance.lastCheckpointPos != Vector2.zero ) {
+            cam.enabled = true;
+            transform.position = CheckpointManager.instance.lastCheckpointPos;
+        }
     }
 
     private void OnEnable() {

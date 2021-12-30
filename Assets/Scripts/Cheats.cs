@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Cheats : MonoBehaviour
 {
@@ -16,5 +17,9 @@ public class Cheats : MonoBehaviour
         cam.position = new Vector3 (0.6f, 1.5f, -10);
         cam.GetComponent<CameraFollow>().enabled = true;
         player.position = new Vector3(0.6f, -2.2f, 0);
+    }
+
+    public void ResetLevel() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

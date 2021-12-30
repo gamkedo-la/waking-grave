@@ -11,6 +11,12 @@ public class CameraFollow : MonoBehaviour
     private Rigidbody2D targetRb2d;
     public float xBoundaryLeft;
 
+    private void Awake() {
+        if(CheckpointManager.instance != null && CheckpointManager.instance.lastCheckpointPos != Vector2.zero ) {
+            transform.position = new Vector3( CheckpointManager.instance.lastCheckpointPos.x , CheckpointManager.instance.lastCheckpointPos.y, -10f);
+        }
+    }
+
     private void Start()
     {
         threshold = CalculateThreshold();
