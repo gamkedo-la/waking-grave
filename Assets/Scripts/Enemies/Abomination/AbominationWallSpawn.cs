@@ -24,6 +24,7 @@ public class AbominationWallSpawn : BaseState
     public override void Enter()
     {
         base.Enter();
+        _sm.anim.SetTrigger("Attack");
         sw.Restart();
         selectedPattern = spawnPatterns[Random.Range(0, spawnPatterns.Length - 1)];
         spawnCounter = 0;

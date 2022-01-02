@@ -20,6 +20,7 @@ public class AbominationJump : BaseState
     public override void Enter()
     {
         base.Enter();
+        _sm.anim.SetTrigger("Idle");
         jumpCounter = 0;
         // for now the jumps will be a multiple of two as I'm unsure on how to detect the position in a clean way and which attacks to do from there
         currentJumps = 4;
@@ -40,6 +41,7 @@ public class AbominationJump : BaseState
                 stateMachine.ChangeState(_sm.tacklingState);
             } else {
                 _sm.rb2d.AddForce(new Vector2(horizontalSpeed * (_sm.isFacingRight ? 1 : -1), jumpForce), ForceMode2D.Impulse);
+                _sm.anim.SetTrigger("Jump");
                 jumpCounter++;
             }
         }

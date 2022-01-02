@@ -17,6 +17,7 @@ public class AbominationTackle : BaseState
     public override void Enter()
     {
         base.Enter();
+        _sm.anim.SetTrigger("Walk");
         chargeSpeed = _sm.isFacingRight ? 10 : -10;
         _sm.hasCrashed = false;
         sw.Restart();

@@ -47390,6 +47390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 1381784453}
   groundCheck: {fileID: 485289968}
+  anim: {fileID: 0}
   isFacingRight: 0
   groundLayer:
     serializedVersion: 2

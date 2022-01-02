@@ -15,6 +15,7 @@ public class AbominationIdle : BaseState
     public override void Enter()
     {
         base.Enter();
+        _sm.anim.SetTrigger("Idle");
         sw = new Stopwatch();
         sw.Start();
     }

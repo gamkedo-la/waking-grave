@@ -11,6 +11,7 @@ public class AbominationSM : StateMachine
 
     public Rigidbody2D rb2d;
     public Transform groundCheck;
+    public Animator anim;
     public bool isFacingRight;
     public LayerMask groundLayer;
     public bool hasCrashed;
@@ -26,6 +27,7 @@ public class AbominationSM : StateMachine
         tacklingState = new AbominationTackle(this);
         wallSpawnState = new AbominationWallSpawn(this);
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     protected override BaseState GetInitialState()
