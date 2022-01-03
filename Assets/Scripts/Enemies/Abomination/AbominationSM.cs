@@ -48,6 +48,9 @@ public class AbominationSM : StateMachine
             hasCrashed = true;
         }
     }
+    private void OnDestroy() {
+        Debug.Log("Killed boss");
+    }
 
     private void OnTriggerEnter2D(Collider2D other) {
         // Add Logic to hurt player

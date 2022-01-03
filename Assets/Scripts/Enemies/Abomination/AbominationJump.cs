@@ -38,7 +38,6 @@ public class AbominationJump : BaseState
                 _sm.Flip();
             }
             if(jumpCounter == currentJumps) {
-                stateMachine.ChangeState(_sm.tacklingState);
                 if(_sm.healthManager.OverHalfLife()) {
                     stateMachine.ChangeState(_sm.tacklingState);
                 } else {

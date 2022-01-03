@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -221,6 +222,10 @@ public class PlayerController : MonoBehaviour
             currentHealth -= 1;
             if(healthBar) {
                 healthBar.fillAmount -= (1.0f / maxHealth);
+            }
+
+            if(currentHealth == 0) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             // TODO: Add restart logic when health < 0
             anim.SetTrigger("getDamaged");
