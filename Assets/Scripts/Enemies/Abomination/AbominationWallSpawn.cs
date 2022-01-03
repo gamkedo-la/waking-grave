@@ -42,7 +42,11 @@ public class AbominationWallSpawn : BaseState
             }
         } else {
             if(sw.ElapsedMilliseconds > 800 ) {
-                stateMachine.ChangeState(_sm.jumpingState);
+                if( Vector2.Distance(_sm.transform.position, _sm.playerTransform.position) > 10 ) { // Lejos
+                    stateMachine.ChangeState(_sm.jumpingState);
+                } else {
+                    stateMachine.ChangeState(_sm.tacklingState);
+                }
             }
         }
     }

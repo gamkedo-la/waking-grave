@@ -39,6 +39,15 @@ public class AbominationJump : BaseState
             }
             if(jumpCounter == currentJumps) {
                 stateMachine.ChangeState(_sm.tacklingState);
+                if(_sm.healthManager.OverHalfLife()) {
+                    stateMachine.ChangeState(_sm.tacklingState);
+                } else {
+                    if( Vector2.Distance(_sm.transform.position, _sm.playerTransform.position) > 10 ) { // if Player is "Far" Away
+                        stateMachine.ChangeState(_sm.wallSpawnState);
+                    } else {
+                        stateMachine.ChangeState(_sm.tacklingState);
+                    }
+                }
             } else {
                 _sm.rb2d.AddForce(new Vector2(horizontalSpeed * (_sm.isFacingRight ? 1 : -1), jumpForce), ForceMode2D.Impulse);
                 _sm.anim.SetTrigger("Jump");

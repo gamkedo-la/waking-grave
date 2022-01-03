@@ -16,6 +16,8 @@ public class AbominationSM : StateMachine
     public LayerMask groundLayer;
     public bool hasCrashed;
     public bool isTackling;
+    public EnemyHealthManager healthManager;
+    public Transform playerTransform;
     private SpriteRenderer sr;
 
     public GameObject[] wallPrefabs;
@@ -28,6 +30,7 @@ public class AbominationSM : StateMachine
         wallSpawnState = new AbominationWallSpawn(this);
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        healthManager = GetComponent<EnemyHealthManager>();
     }
 
     protected override BaseState GetInitialState()

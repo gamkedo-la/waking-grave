@@ -47397,6 +47397,8 @@ MonoBehaviour:
     m_Bits: 64
   hasCrashed: 0
   isTackling: 0
+  healthManager: {fileID: 0}
+  playerTransform: {fileID: 1340604277}
   wallPrefabs:
   - {fileID: 7694157644742422555, guid: cc673bcf970f1524e8343d4f07824000, type: 3}
   - {fileID: 9193609784083270911, guid: 537e20f75401fa84a807aacadc338d2c, type: 3}
@@ -98114,6 +98116,10 @@ PrefabInstance:
     - target: {fileID: 5810425167383462822, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
       propertyPath: currentHealth
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810425167383462822, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
+      propertyPath: shootCooldown
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5810425167383462822, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
       propertyPath: damagedForce.x

@@ -24,4 +24,8 @@ public class EnemyHealthManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public bool OverHalfLife() {
+        return currentHealth > maxHealth /2;
+    }
 }

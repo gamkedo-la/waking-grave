@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
     [Header("Shooting")]
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private float shootCooldown;
+    private bool canShoot;
 
     [Header("Health Variables")]
     [SerializeField] private Vector2 damagedForce;
@@ -59,6 +61,7 @@ public class PlayerController : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         wallJumpAngle.Normalize();
+        canShoot = true;
 
         dustParticles = GetComponentInChildren<ParticleSystem>(); // fixme: we might need more than one
         if (!dustParticles) Debug.Log("Player is missing a dust particle system!");
@@ -192,11 +195,19 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot(InputAction.CallbackContext obj)
     {
-        GameObject temp  = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        temp.GetComponent<Bullet>().SetDirection(isFacingRight);
-        if(!isFacingRight) {
-            temp.GetComponent<SpriteRenderer>().flipX = true;
+        if(canShoot) {
+            canShoot = false;
+            GameObject temp  = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            temp.GetComponent<Bullet>().SetDirection(isFacingRight);
+            if(!isFacingRight) {
+                temp.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            Invoke("EnableShoot", shootCooldown);
         }
+    }
+
+    private void EnableShoot() {
+        canShoot = true;
     }
 
     public void GetDamaged(float xPosition) {

@@ -32,7 +32,15 @@ public class AbominationTackle : BaseState
                 _sm.rb2d.velocity = new Vector2(chargeSpeed, 0f);
             } else {
                 _sm.Flip();
-                stateMachine.ChangeState(_sm.wallSpawnState);
+                if(_sm.healthManager.OverHalfLife()) {
+                    stateMachine.ChangeState(_sm.jumpingState);
+                } else {
+                    if( Vector2.Distance(_sm.transform.position, _sm.playerTransform.position) > 10 ) { // if Player is "Far" Away
+                        stateMachine.ChangeState(_sm.wallSpawnState);
+                    } else {
+                        stateMachine.ChangeState(_sm.jumpingState);
+                    }
+                }
             }
         } else {
             _sm.hasCrashed = false;
