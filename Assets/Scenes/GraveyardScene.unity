@@ -46728,6 +46728,7 @@ MonoBehaviour:
   maxHealth: 15
   currentHealth: 15
   healthBar: {fileID: 193855765730212516}
+  prefabToSpawnOnDeath: {fileID: 6513897265046327125, guid: a3f242faddc001b4f82c058ef63dd261, type: 3}
 --- !u!82 &1381784458
 AudioSource:
   m_ObjectHideFlags: 0

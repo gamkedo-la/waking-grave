@@ -9,6 +9,8 @@ public class EnemyHealthManager : MonoBehaviour
     public int currentHealth;
     public Image healthBar;
 
+    public GameObject prefabToSpawnOnDeath; //optional
+
     private void Awake() {
         if(!GetComponent<BoxCollider2D>()) {
             Debug.LogError("No collider attached to enemy" + transform.position + " " + !GetComponent<BoxCollider2D>() + " " + !GetComponent<CircleCollider2D>());
@@ -21,6 +23,10 @@ public class EnemyHealthManager : MonoBehaviour
             healthBar.fillAmount -= (1.0f / maxHealth);
         }
         if(currentHealth == 0) {
+            if (prefabToSpawnOnDeath)
+            {
+                GameObject.Instantiate(prefabToSpawnOnDeath, transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         }
     }
