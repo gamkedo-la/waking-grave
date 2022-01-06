@@ -10,11 +10,10 @@ public class AbominationWall : MonoBehaviour
 	public void SetDirection( bool isRight ) {
 		rb2D = GetComponent<Rigidbody2D>();
 		rb2D.velocity = transform.right * (isRight ? 1 : -1) * speed;
+		Invoke("Despawn", 2.2f);
 	}
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.CompareTag("Wall")){
-            Destroy(gameObject);
-        }
-    }
+	private void Despawn() {
+		Destroy(gameObject);
+	}
 }
