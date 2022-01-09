@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float shootCooldown;
     [SerializeField] private AudioClip shootSfx;
     private bool canShoot;
+    public bool shootingDisabled;
 
     [Header("Health Variables")]
     [SerializeField] private Vector2 damagedForce;
@@ -203,7 +204,7 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot(InputAction.CallbackContext obj)
     {
-        if(canShoot) {
+        if(canShoot && !shootingDisabled) {
             canShoot = false;
             GameObject temp  = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
             temp.GetComponent<Bullet>().SetDirection(isFacingRight);
