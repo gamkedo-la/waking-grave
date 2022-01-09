@@ -10,7 +10,7 @@ public class AbominationWall : MonoBehaviour
 	public void SetDirection( bool isRight ) {
 		rb2D = GetComponent<Rigidbody2D>();
 		rb2D.velocity = transform.right * (isRight ? 1 : -1) * speed;
-		Invoke("Despawn", 2.2f);
+		Invoke("Despawn", 3f);
 	}
 
 	private void Despawn() {

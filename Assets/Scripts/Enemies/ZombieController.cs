@@ -72,25 +72,21 @@ public class ZombieController : MonoBehaviour
     }
 
     // player just entered detection range
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Player") && isCorrupted) {
-            Debug.Log("Zombie is aware of the player!");
+    public void EngagePlayer(Transform player) {
+        if(isCorrupted) {
             if (spawnIfAlerted) {
                 // spawn an "!" above their head and slightly in front of them in the z plane
                 Instantiate(spawnIfAlerted, new Vector3(transform.position.x,transform.position.y+1,transform.position.z+0.1f), Quaternion.identity);
             }
-            // turn on the red eyes!
             if (activeIfAlterted) activeIfAlterted.SetActive(true);
             // start following the player
-            playerPosition = other.transform;
-
-            // mainCamera.GetComponent<CameraAudioScript>().PlayRandomZombieAlertSFX(); TODO: FIX For Skeleton
+            playerPosition = player;
         }
     }
 
     // player just left detection range
-    private void OnTriggerExit2D(Collider2D other) {
-        if(other.CompareTag("Player")) {
+    public void DisengagePlayer() {
+        if(isCorrupted) {
             // turn off the red eyes!
             if (activeIfAlterted) activeIfAlterted.SetActive(false);
             // stop following the player
