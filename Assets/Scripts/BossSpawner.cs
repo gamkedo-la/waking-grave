@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BossSpawner : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class BossSpawner : MonoBehaviour
     public float camSpeed;
     private bool moveCam;
     private Vector3 camTarget = new Vector3 (250.5f, -9, -10);
+    public AudioClip bossTheme;
+    public AudioSource musicManager;
 
     private void FixedUpdate() {
         if(moveCam) {
@@ -34,6 +37,7 @@ public class BossSpawner : MonoBehaviour
     private void EnableBoss () {
         bossHealthBar.SetActive(true);
         abomination.SetActive(true);
-
+        musicManager.clip = bossTheme;
+        musicManager.Play();
     }
 }

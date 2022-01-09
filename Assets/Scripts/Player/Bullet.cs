@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour {
 	[SerializeField] private float speed;
 	[SerializeField] private int damage;
 	private int direction;
+	private bool hit;
 
 	// Use this for initializationç
 	public void SetDirection( bool isRight ) {
@@ -19,12 +20,16 @@ public class Bullet : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D other) {
 		// if not isTrigger means its a solid object and should be deleted
-		if(!other.CompareTag("Player") && !other.isTrigger) {
+		if(!other.CompareTag("Player") && !other.isTrigger && !hit) {
+			GetComponent<AudioSource>().Play();
 			EnemyHealthManager temp = other.GetComponent<EnemyHealthManager>();
 			if(temp) {
 				temp.GetDamaged(damage);
 			}
-			Destroy(gameObject);
+			GetComponent<SpriteRenderer>().enabled = false;
+			transform.GetChild(0).gameObject.SetActive(false);
+			hit = true;
+			Destroy(gameObject, .5f);
 		}
 	}
 }

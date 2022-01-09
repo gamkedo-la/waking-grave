@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private PlatformerInputs platformerInputs;
     private InputAction movementAction;
     private Animator anim;
+    private AudioSource audioSource;
     [SerializeField] private CameraFollow cam;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
@@ -39,12 +41,14 @@ public class PlayerController : MonoBehaviour
     [Header("Dash")]
     private bool isDashing;
     private bool isDashJumping;
+    [SerializeField] AudioClip dashSfx;
 
     private ParticleSystem dustParticles;
     [Header("Shooting")]
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float shootCooldown;
+    [SerializeField] private AudioClip shootSfx;
     private bool canShoot;
 
     [Header("Health Variables")]
@@ -61,6 +65,7 @@ public class PlayerController : MonoBehaviour
         platformerInputs = new PlatformerInputs();
         rb2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         wallJumpAngle.Normalize();
         canShoot = true;
 
@@ -143,6 +148,8 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Dash() {
         isDashing = true;
         rb2D.AddForce(new Vector2((isFacingRight ? 1: -1) * speed , 0), ForceMode2D.Impulse);
+        audioSource.clip = dashSfx;
+        audioSource.Play();
         yield return new WaitForSeconds(0.2f);
         isDashing = false;
     }
@@ -200,6 +207,8 @@ public class PlayerController : MonoBehaviour
             canShoot = false;
             GameObject temp  = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
             temp.GetComponent<Bullet>().SetDirection(isFacingRight);
+            audioSource.clip = shootSfx;
+            audioSource.Play();
             if(!isFacingRight) {
                 temp.GetComponent<SpriteRenderer>().flipX = true;
             }
