@@ -345,7 +345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &505783096
 Transform:
   m_ObjectHideFlags: 0
@@ -421,7 +421,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6063135513826691199, guid: f9c4ebe8a1e187844a01327d6fc23ef5, type: 3}
       propertyPath: m_Text
-      value: Press K to  select a level
+      value: "While you can enter the church \nthe level is not playable at the \nmoment.\n\nPress
+        A or D to move\nPress K to  select a level."
       objectReference: {fileID: 0}
     - target: {fileID: 6063135514369800033, guid: f9c4ebe8a1e187844a01327d6fc23ef5, type: 3}
       propertyPath: m_Pivot.x
@@ -493,7 +494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6063135514369800033, guid: f9c4ebe8a1e187844a01327d6fc23ef5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.267786
+      value: 4.51
       objectReference: {fileID: 0}
     - target: {fileID: 6063135514369800033, guid: f9c4ebe8a1e187844a01327d6fc23ef5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -624,7 +625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801994599}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.107813, y: -1.0235198, z: 3.576775}
+  m_LocalPosition: {x: 1, y: -1.0235198, z: 3.576775}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1393721906}
@@ -914,7 +915,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268821864}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.107813, y: 1.4764802, z: 3.576775}
+  m_LocalPosition: {x: 1, y: 1.4764802, z: 3.576775}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 140038047}
@@ -1067,7 +1068,7 @@ GameObject:
   - component: {fileID: 1403271903}
   - component: {fileID: 1403271904}
   m_Layer: 0
-  m_Name: Music (Missing Prefab)
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1096,7 +1097,7 @@ AudioSource:
   m_GameObject: {fileID: 1403271902}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7037370521893704835, guid: de337e706a80340ecbda761acb5e8b28, type: 2}
   m_audioClip: {fileID: 8300000, guid: 238e2577b3f1a40d2ba2145771310ac8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1658,7 +1659,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786665090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.52, y: -1.18, z: 0}
+  m_LocalPosition: {x: -1.22, y: -1.18, z: 0}
   m_LocalScale: {x: 4.523073, y: 4.523073, z: 4.523073}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1864,7 +1865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1900537278
 Transform:
   m_ObjectHideFlags: 0
@@ -10808,7 +10809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5810425167383462808, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.45
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5810425167383462808, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
       propertyPath: m_LocalPosition.y

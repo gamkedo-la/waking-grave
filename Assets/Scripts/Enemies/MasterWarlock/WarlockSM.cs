@@ -16,6 +16,9 @@ public class WarlockSM : StateMachine
     WarlockSM _sm;
     public GameObject lightBlastFS; // Lightblast the whole screen
     public bool finishedLightblast;
+    public EnemyHealthManager healthManager;
+    public Transform playerTransform;
+    public bool onSecondLoop; // to indicate if the SM is currently in the second loop of states.
 
     private void Awake()
     {
@@ -25,6 +28,7 @@ public class WarlockSM : StateMachine
         lightblastState = new WarlockLightblast(this);
         rb2d = GetComponent<Rigidbody2D>();
         warlocksCircleCollider = GetComponent<CircleCollider2D>();
+        healthManager = GetComponent<EnemyHealthManager>();
         _sm = this;
     }
 

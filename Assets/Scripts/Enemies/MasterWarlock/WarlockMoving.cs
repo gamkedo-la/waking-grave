@@ -6,7 +6,7 @@ using UnityEngine;
 public class WarlockMoving : BaseState
 {
     WarlockSM _sm;
-    Stopwatch stopWatch;
+    Stopwatch sw;
 
     private Vector3 centerMovementReferencePoint;
     float speed = 3.5f;
@@ -19,8 +19,9 @@ public class WarlockMoving : BaseState
     public override void Enter()
     {
         base.Enter();
-        stopWatch = new Stopwatch();
-        stopWatch.Restart();
+        sw = new Stopwatch();
+        sw.Restart();
+        _sm.transform.position = new Vector2(-1.5f, -1);
         centerMovementReferencePoint = _sm.transform.position;
     }
 
@@ -28,9 +29,18 @@ public class WarlockMoving : BaseState
     {
         base.UpdateLogic();
 
-        float elapsedTimeFloat = (float)stopWatch.ElapsedMilliseconds / 1000;
+        float elapsedTimeFloat = (float)sw.ElapsedMilliseconds / 1000;
 
         _sm.transform.position = centerMovementReferencePoint + (Vector3.right * Mathf.Sin((elapsedTimeFloat) / 2 * speed) * xDeviation -
                                               Vector3.up * Mathf.Sin(elapsedTimeFloat * speed) * yDeviation);
+        if(sw.ElapsedMilliseconds > 2000) {
+            if(!_sm.onSecondLoop) {
+                _sm.onSecondLoop = true;
+                stateMachine.ChangeState(_sm.retreatingState);
+            } else {
+                _sm.onSecondLoop = false;
+                stateMachine.ChangeState(_sm.lightblastState);
+            }
+        }
     }
 }

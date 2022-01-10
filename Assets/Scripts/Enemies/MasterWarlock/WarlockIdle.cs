@@ -23,8 +23,8 @@ public class WarlockIdle : BaseState
     public override void UpdateLogic()
     {
         base.UpdateLogic();
-        if(sw.ElapsedMilliseconds > 1500) {
-            stateMachine.ChangeState(_sm.lightblastState);
+        if(sw.ElapsedMilliseconds > 400) {
+            stateMachine.ChangeState(_sm.movingState);
         }
     }
 }

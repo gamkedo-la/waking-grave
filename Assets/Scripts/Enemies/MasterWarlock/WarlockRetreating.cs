@@ -30,8 +30,7 @@ public class WarlockRetreating : BaseState
         else if (_sm.transform.position.x - warlocksRetreatPosition.transform.position.x < 0.1 &&
             _sm.transform.position.y - warlocksRetreatPosition.transform.position.y < 0.1)
         {
-            _sm.ChangeState(_sm.idleState);
-            warlocksRetreatPosition.GetComponent<RetreatPositionScript>().ResetPosition();
+            _sm.ChangeState(_sm.movingState);
         }
     }
 }
