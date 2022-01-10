@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private InputAction movementAction;
     private Animator anim;
     private AudioSource audioSource;
+    private bool disableMovement;
     [SerializeField] private CameraFollow cam;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
@@ -156,7 +157,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        if(!isDamaged) {
+        if(!disableMovement) {
             Move();
             WallSlide();
         }
@@ -221,13 +222,16 @@ public class PlayerController : MonoBehaviour
         canShoot = true;
     }
 
-    public void GetDamaged(float xPosition) {
+    public void GetDamaged(float xPosition, bool noMovement) {
         if(!isDamaged) {
             isDamaged = true;
-            rb2D.velocity = Vector2.zero;
-            int direction = xPosition > transform.position.x ? -1 : 1;
-            Vector2 pushback = new Vector2(damagedForce.x * direction, damagedForce.y);
-            rb2D.AddForce(pushback , ForceMode2D.Impulse);
+            disableMovement = noMovement;
+            if(disableMovement) {
+                rb2D.velocity = Vector2.zero;
+                int direction = xPosition > transform.position.x ? -1 : 1;
+                Vector2 pushback = new Vector2(damagedForce.x * direction, damagedForce.y);
+                rb2D.AddForce(pushback , ForceMode2D.Impulse);
+            }
 
             currentHealth -= 1;
             if(healthBar) {
@@ -244,6 +248,7 @@ public class PlayerController : MonoBehaviour
 
     public void EnableDamage() {
         isDamaged = false;
+        disableMovement = false;
     }
 
     private void OnDrawGizmosSelected() {

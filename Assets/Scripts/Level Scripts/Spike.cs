@@ -21,7 +21,7 @@ public class Spike : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Player")){
-            other.gameObject.GetComponent<PlayerController>().GetDamaged(transform.position.x);
+            other.gameObject.GetComponent<PlayerController>().GetDamaged(transform.position.x, true);
         }
     }
 }
