@@ -36,7 +36,7 @@ public class WarlockMoving : BaseState
         if(sw.ElapsedMilliseconds > 2000) {
             if(!_sm.onSecondLoop) {
                 _sm.onSecondLoop = true;
-                stateMachine.ChangeState(_sm.retreatingState);
+                stateMachine.ChangeState(_sm.shootingState);
             } else {
                 _sm.onSecondLoop = false;
                 stateMachine.ChangeState(_sm.lightblastState);

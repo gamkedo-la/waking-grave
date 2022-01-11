@@ -14,6 +14,7 @@ public class WarlockLightblast : BaseState
     {
         base.Enter();
         _sm.lightBlastFS.SetActive(true);
+        _sm.finishedLightblast = false;
     }
 
     public override void UpdateLogic()

@@ -8,6 +8,8 @@ public class WarlockSM : StateMachine
     [HideInInspector] public WarlockMoving movingState;
     [HideInInspector] public WarlockRetreating retreatingState;
     [HideInInspector] public WarlockLightblast lightblastState;
+    [HideInInspector] public WarlockShooting shootingState;
+
     public Rigidbody2D rb2d;
 
     [SerializeField] GameObject warlocksRetreatPosition;
@@ -26,6 +28,7 @@ public class WarlockSM : StateMachine
         movingState = new WarlockMoving(this);
         retreatingState = new WarlockRetreating(this);
         lightblastState = new WarlockLightblast(this);
+        shootingState = new WarlockShooting(this);
         rb2d = GetComponent<Rigidbody2D>();
         warlocksCircleCollider = GetComponent<CircleCollider2D>();
         healthManager = GetComponent<EnemyHealthManager>();
