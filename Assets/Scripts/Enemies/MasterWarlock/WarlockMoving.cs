@@ -11,7 +11,8 @@ public class WarlockMoving : BaseState
     private Vector3 centerMovementReferencePoint;
     float speed = 3.5f;
     float xDeviation = 8.0f;
-    float yDeviation = 4.0f;
+    float yDeviation = 3.0f;
+    int endpoint;
     public WarlockMoving(WarlockSM stateMachine) : base("WarlockMoving", stateMachine) {
         _sm = stateMachine;
     }
@@ -21,7 +22,8 @@ public class WarlockMoving : BaseState
         base.Enter();
         sw = new Stopwatch();
         sw.Restart();
-        _sm.transform.position = new Vector2(-1.5f, -1);
+        _sm.transform.position = new Vector2(-1.5f, 1);
+        endpoint = Random.Range(2000, 4000);
         centerMovementReferencePoint = _sm.transform.position;
     }
 
@@ -33,13 +35,13 @@ public class WarlockMoving : BaseState
 
         _sm.transform.position = centerMovementReferencePoint + (Vector3.right * Mathf.Sin((elapsedTimeFloat) / 2 * speed) * xDeviation -
                                               Vector3.up * Mathf.Sin(elapsedTimeFloat * speed) * yDeviation);
-        if(sw.ElapsedMilliseconds > 2000) {
+        if(sw.ElapsedMilliseconds > endpoint) {
             if(!_sm.onSecondLoop) {
                 _sm.onSecondLoop = true;
                 stateMachine.ChangeState(_sm.shootingState);
             } else {
                 _sm.onSecondLoop = false;
-                stateMachine.ChangeState(_sm.lightblastState);
+                stateMachine.ChangeState(_sm.shootingState);
             }
         }
     }

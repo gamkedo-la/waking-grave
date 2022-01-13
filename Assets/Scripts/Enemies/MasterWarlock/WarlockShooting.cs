@@ -21,14 +21,17 @@ public class WarlockShooting : BaseState
         sw = new Stopwatch();
         sw.Start();
         hasShot = false;
+        _sm.anim.SetTrigger("StartBlast");
+        _sm.eldritchBlast.gameObject.SetActive(true);
     }
 
     public override void UpdateLogic()
     {
         base.UpdateLogic();
         if(sw.ElapsedMilliseconds > 1000 && !hasShot) {
-            UnityEngine.Debug.Log("Shoot");
+            _sm.anim.SetTrigger("EndBlast");
             hasShot = true;
+            _sm.eldritchBlast.Shoot();
         }
         if (sw.ElapsedMilliseconds > 2000) {
             stateMachine.ChangeState(_sm.movingState);
