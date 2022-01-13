@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float speed;
 
+    public PlatformerInputs GetPlatformerInputs => platformerInputs;
 
     private float horizontal;
     private bool isFacingRight = true;
