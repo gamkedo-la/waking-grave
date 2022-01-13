@@ -20,7 +20,9 @@ public class WarlockSM : StateMachine
     public bool finishedLightblast;
     public EnemyHealthManager healthManager;
     public Transform playerTransform;
+    public Animator anim;
     public bool onSecondLoop; // to indicate if the SM is currently in the second loop of states.
+    public EldritchBlast eldritchBlast;
 
     private void Awake()
     {
@@ -32,6 +34,7 @@ public class WarlockSM : StateMachine
         rb2d = GetComponent<Rigidbody2D>();
         warlocksCircleCollider = GetComponent<CircleCollider2D>();
         healthManager = GetComponent<EnemyHealthManager>();
+        anim = GetComponent<Animator>();
         _sm = this;
     }
 
