@@ -13,7 +13,7 @@ public class WarlockLightblast : BaseState
     public override void Enter()
     {
         base.Enter();
-        _sm.lightBlastFS.SetActive(true);
+        _sm.lightBlastIL.SetActive(true);
         _sm.finishedLightblast = false;
     }
 

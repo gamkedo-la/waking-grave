@@ -17,6 +17,8 @@ public class WarlockSM : StateMachine
 
     WarlockSM _sm;
     public GameObject lightBlastFS; // Lightblast the whole screen
+    public GameObject lightBlastIL; // Lightblast the interleaved
+
     public bool finishedLightblast;
     public EnemyHealthManager healthManager;
     public Transform playerTransform;
