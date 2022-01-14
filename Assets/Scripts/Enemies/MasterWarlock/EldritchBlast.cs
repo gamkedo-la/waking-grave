@@ -9,14 +9,16 @@ public class EldritchBlast : MonoBehaviour
     ParticleSystem eldrichBlastParticleSystem;
     public Transform target;
     Vector3 targetPosition;
-    private float eldrichBlastSpeed = 0.01f;
+    private float eldrichBlastSpeed = 0.03f;
+    public Transform mwTransform;
 
     private void Awake() {
         eldrichBlastParticleSystem = GetComponent<ParticleSystem>();
     }
     // Start is called before the first frame update
     private void OnEnable() {
-        transform.position = transform.parent.position + new Vector3(0f, 1.5f, 0);
+        // UnityEngine.Debug.Break();
+        transform.position = mwTransform.position + new Vector3(0f, 1.5f, 0);
         var shapeModuleOfParticleSystem = eldrichBlastParticleSystem.shape;
         shapeModuleOfParticleSystem.angle = 0f;
         shapeModuleOfParticleSystem.radius = 0f;
