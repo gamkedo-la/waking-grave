@@ -34,7 +34,7 @@ public class WarlockShooting : BaseState
             _sm.eldritchBlast.Shoot();
         }
         if (sw.ElapsedMilliseconds > 3000) {
-            stateMachine.ChangeState(_sm.movingState);
+            stateMachine.ChangeState(_sm.retreatingState);
         }
     }
 }

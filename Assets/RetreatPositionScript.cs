@@ -28,7 +28,6 @@ public class RetreatPositionScript : MonoBehaviour
     {
         float newX = Random.Range(leftBoundX, rightBoundX);
         float newY = Random.Range(lowerBoundY, upperBoundY);
-        Debug.Log("newX: " + newX);
 
         Vector2 newPosition = new Vector2(newX, newY);
         gameObject.transform.position = newPosition;

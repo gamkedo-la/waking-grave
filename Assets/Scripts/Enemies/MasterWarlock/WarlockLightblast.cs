@@ -21,7 +21,7 @@ public class WarlockLightblast : BaseState
     {
         base.UpdateLogic();
         if(_sm.finishedLightblast) {
-            stateMachine.ChangeState(_sm.movingState);
+            stateMachine.ChangeState(_sm.retreatingState);
         }
     }
 }

@@ -22,7 +22,6 @@ public class WarlockMoving : BaseState
         base.Enter();
         sw = new Stopwatch();
         sw.Restart();
-        _sm.transform.position = new Vector2(-1.5f, 1);
         endpoint = Random.Range(2000, 4000);
         centerMovementReferencePoint = _sm.transform.position;
     }
