@@ -5,6 +5,7 @@ using UnityEngine;
 public class WarlockLightblast : BaseState
 {
     private WarlockSM _sm;
+    private bool alternativeLightblast;
 
     public WarlockLightblast(WarlockSM stateMachine) : base("WarlockLightblast", stateMachine) {
         _sm = stateMachine;
@@ -13,7 +14,15 @@ public class WarlockLightblast : BaseState
     public override void Enter()
     {
         base.Enter();
-        _sm.lightBlastIL.SetActive(true);
+        if(_sm.healthManager.OverHalfLife()) {
+            _sm.lightBlastIL.SetActive(true);
+        } else {
+            if(alternativeLightblast) {
+                _sm.lightBlastIL.SetActive(true);
+            } else {
+                _sm.lightBlastFS.SetActive(true);
+            }
+        }
         _sm.finishedLightblast = false;
     }
 
@@ -21,7 +30,17 @@ public class WarlockLightblast : BaseState
     {
         base.UpdateLogic();
         if(_sm.finishedLightblast) {
-            stateMachine.ChangeState(_sm.retreatingState);
+            if(_sm.healthManager.OverHalfLife()) {
+                stateMachine.ChangeState(_sm.retreatingState);
+            } else {
+                if(alternativeLightblast) {
+                    alternativeLightblast = !alternativeLightblast;
+                    stateMachine.ChangeState(_sm.wallSpawnState);
+                } else {
+                    alternativeLightblast = !alternativeLightblast;
+                    stateMachine.ChangeState(_sm.retreatingState);
+                }
+            }
         }
     }
 }

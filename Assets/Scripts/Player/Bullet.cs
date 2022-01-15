@@ -19,7 +19,6 @@ public class Bullet : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log(other.name);
 		// if not isTrigger means its a solid object and should be deleted
 		if(!other.CompareTag("Player") && !other.isTrigger && !hit) {
 			GetComponent<AudioSource>().Play();

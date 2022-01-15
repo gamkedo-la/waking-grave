@@ -9,6 +9,7 @@ public class WarlockSM : StateMachine
     [HideInInspector] public WarlockRetreating retreatingState;
     [HideInInspector] public WarlockLightblast lightblastState;
     [HideInInspector] public WarlockShooting shootingState;
+    [HideInInspector] public WarlockWallSpawn wallSpawnState;
 
     public Rigidbody2D rb2d;
 
@@ -25,6 +26,7 @@ public class WarlockSM : StateMachine
     public Animator anim;
     public bool onSecondLoop; // to indicate if the SM is currently in the second loop of states.
     public EldritchBlast eldritchBlast;
+    public GameObject[] wallPrefabs;
 
     private void Awake()
     {
@@ -33,6 +35,7 @@ public class WarlockSM : StateMachine
         retreatingState = new WarlockRetreating(this);
         lightblastState = new WarlockLightblast(this);
         shootingState = new WarlockShooting(this);
+        wallSpawnState = new WarlockWallSpawn(this);
         rb2d = GetComponent<Rigidbody2D>();
         warlocksCircleCollider = GetComponent<CircleCollider2D>();
         healthManager = GetComponent<EnemyHealthManager>();
@@ -43,6 +46,13 @@ public class WarlockSM : StateMachine
     protected override BaseState GetInitialState()
     {
         return idleState;
+    }
+
+    public void SpawnWall(int index) {
+        bool isFacingRight = transform.position.x  < -1.5f;
+        Vector3 spawnPosition = isFacingRight ? new Vector3(-11.5f, -3.5f + (0.5f*index), 0f) : new Vector3(8.5f, -3.5f + (0.5f*index), 0f);
+        GameObject wall = Instantiate(wallPrefabs[index], spawnPosition, Quaternion.identity);
+        wall.GetComponent<AbominationWall>().SetDirection(isFacingRight);
     }
 }
 

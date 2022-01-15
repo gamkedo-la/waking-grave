@@ -17,7 +17,10 @@ public class LightBlast : MonoBehaviour
         if(nextLightblast) {
             nextLightblast.SetActive(true);
         } else {
-            GameObject.Find("MasterWarlock").GetComponent<WarlockSM>().finishedLightblast = true;
+            GameObject temp = GameObject.Find("MasterWarlock");
+            if(temp) {
+                temp.GetComponent<WarlockSM>().finishedLightblast = true;
+            }
         }
     }
 
