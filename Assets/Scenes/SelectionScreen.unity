@@ -421,8 +421,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6063135513826691199, guid: f9c4ebe8a1e187844a01327d6fc23ef5, type: 3}
       propertyPath: m_Text
-      value: "While you can enter the church \nthe level is not playable at the \nmoment.\n\nPress
-        A or D to move\nPress K to  select a level."
+      value: 'Press A or D to move
+
+        Press K to  select a level.'
       objectReference: {fileID: 0}
     - target: {fileID: 6063135514369800033, guid: f9c4ebe8a1e187844a01327d6fc23ef5, type: 3}
       propertyPath: m_Pivot.x
@@ -514,8 +515,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6191671306046339410, guid: f9c4ebe8a1e187844a01327d6fc23ef5, type: 3}
       propertyPath: m_Text
-      value: "While you can enter the church \nthe level is not playable at the \nmoment.\n\nUse
-        left joystick to move\nPress (X) to  select a level."
+      value: 'Use left joystick to move
+
+        Press (X) to  select a level.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9c4ebe8a1e187844a01327d6fc23ef5, type: 3}

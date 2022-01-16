@@ -586,11 +586,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8013948320729760872, guid: 1ff46e6924e21fa4280414ea84ae9716, type: 3}
       propertyPath: m_Offset.x
-      value: 9.25
+      value: 9.3
       objectReference: {fileID: 0}
     - target: {fileID: 8013948320729760872, guid: 1ff46e6924e21fa4280414ea84ae9716, type: 3}
       propertyPath: m_Offset.y
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013948320729760872, guid: 1ff46e6924e21fa4280414ea84ae9716, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8013948320729760873, guid: 1ff46e6924e21fa4280414ea84ae9716, type: 3}
       propertyPath: m_Name
@@ -650,7 +654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8013948320729760875, guid: 1ff46e6924e21fa4280414ea84ae9716, type: 3}
       propertyPath: m_Offset.x
-      value: -12.25
+      value: -12.3
       objectReference: {fileID: 0}
     - target: {fileID: 8013948320729760875, guid: 1ff46e6924e21fa4280414ea84ae9716, type: 3}
       propertyPath: m_Offset.y
@@ -1652,7 +1656,7 @@ MonoBehaviour:
   maxHealth: 15
   currentHealth: 15
   healthBar: {fileID: 1894928787}
-  prefabToSpawnOnDeath: {fileID: 6513897265046327125, guid: a3f242faddc001b4f82c058ef63dd261, type: 3}
+  prefabToSpawnOnDeath: {fileID: 6979022053000197849, guid: 0b334a863cbe3db40a357cdbf52244ba, type: 3}
 --- !u!50 &1054439754
 Rigidbody2D:
   serializedVersion: 4

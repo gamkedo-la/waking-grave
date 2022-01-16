@@ -12,7 +12,11 @@ public class GateController : MonoBehaviour
 
     private void Awake() {
         platformerInputs = new PlatformerInputs();
-        Debug.Log(PlayerStats.finishedGraveyard);
+    }
+    private void Start() {
+        if(sceneName == "GraveyardScene" && PlayerStats.finishedGraveyard) {
+            this.enabled = false;
+        }
     }
     private void OnEnable() {
         platformerInputs.Player.Shoot.performed += Enter;
@@ -32,7 +36,7 @@ public class GateController : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Player")) {
+        if(other.CompareTag("Player") && this.enabled) {
             isEnabled = true;
             transform.GetChild(0).gameObject.SetActive(true);
         }

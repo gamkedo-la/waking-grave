@@ -16,6 +16,10 @@ public class TitleScreen : MonoBehaviour
         platformerInputs.Player.Shoot.Enable();
     }
 
+    private void OnDisable() {
+        platformerInputs.Player.Shoot.Disable();
+    }
+
     private void NextScene(InputAction.CallbackContext obj)
     {
         PlayerStats.finishedGraveyard = false;

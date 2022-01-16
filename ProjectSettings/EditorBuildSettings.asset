@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MasterWarlockLevel.unity
     guid: b8d9d03a245bcb34e8bb3841f4eeaaa3
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 5749171c1c35ad142ab8ec32060791d4
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b6a27c35e2461bb4db4b4527f8b7b1e4, type: 2}
