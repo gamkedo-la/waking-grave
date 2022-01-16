@@ -18,6 +18,7 @@ public class SelfDestruct : MonoBehaviour
     private void OnDestroy() {
         if(isGraveyard) {
             PlayerStats.finishedGraveyard = true;
+            CheckpointManager.instance.lastCheckpointPos = Vector2.zero;
         }
         SceneManager.LoadScene(nextSceneName);
     }

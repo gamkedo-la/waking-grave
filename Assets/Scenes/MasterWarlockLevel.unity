@@ -1830,7 +1830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5810425167383462822, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
       propertyPath: shootCooldown
-      value: 0.7
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5810425167383462822, guid: 40bafaaf4ed764949ad8ef55513525b9, type: 3}
       propertyPath: damagedForce.x

@@ -198,7 +198,7 @@ public class @PlatformerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""29057288-8bd6-4a76-856b-23ab56921593"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -209,7 +209,7 @@ public class @PlatformerInputs : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""323bd21b-b927-48cc-a681-152b79397cf0"",
-                    ""path"": ""<Keyboard>/k"",
+                    ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

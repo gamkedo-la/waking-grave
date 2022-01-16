@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     private float horizontal;
     private bool isFacingRight = true;
     private bool isGrounded = false;
+    private const float COYOTE_TIME = 0.2f;
+    private float coyoteTimeCounter;
 
     [Header("WallSlide")]
     [SerializeField] private float wallSlideSpeed = 0;
@@ -117,16 +119,19 @@ public class PlayerController : MonoBehaviour
 
         // toggle the dust particles on and off
         if (isGrounded) {
+            coyoteTimeCounter = COYOTE_TIME;
             // note: only actually emits when we are in motion
             if (!dustParticles.isEmitting) dustParticles.Play(true);
         } else {
+            coyoteTimeCounter -= Time.deltaTime;
             // don't emit while in the air
             if (dustParticles.isEmitting) dustParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
     }
 
     private void Jump(InputAction.CallbackContext obj) {
-        if(isGrounded) {
+        if(coyoteTimeCounter > 0f) {
+            coyoteTimeCounter = 0f;
             rb2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             if(isDashing) isDashJumping = true;
             anim.SetTrigger("Jump");

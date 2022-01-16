@@ -46388,7 +46388,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6063135513826691199, guid: f9c4ebe8a1e187844a01327d6fc23ef5, type: 3}
       propertyPath: m_Text
-      value: Press K to Start
+      value: Press J to Start
       objectReference: {fileID: 0}
     - target: {fileID: 6063135514369800033, guid: f9c4ebe8a1e187844a01327d6fc23ef5, type: 3}
       propertyPath: m_Pivot.x
