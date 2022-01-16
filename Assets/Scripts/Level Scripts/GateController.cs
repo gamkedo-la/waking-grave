@@ -12,6 +12,7 @@ public class GateController : MonoBehaviour
 
     private void Awake() {
         platformerInputs = new PlatformerInputs();
+        Debug.Log(PlayerStats.finishedGraveyard);
     }
     private void OnEnable() {
         platformerInputs.Player.Shoot.performed += Enter;

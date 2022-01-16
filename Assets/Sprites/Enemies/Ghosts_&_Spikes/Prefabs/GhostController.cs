@@ -74,7 +74,7 @@ public class GhostController : MonoBehaviour {
             waitToReload -= Time.deltaTime;
             if(waitToReload < 0)
             {
-                Application.LoadLevel(Application.loadedLevel);
+                // Application.LoadLevel(Application.loadedLevel);
                 thePlayer.SetActive(true);
             }    
         }
