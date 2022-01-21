@@ -116188,25 +116188,26 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Luis Monta\xF1a: Project lead, core gameplay, player movement, color palette,
-    graveyard level design, enemy AI, warlock sprite, weapon scripting, abomination
-    improvements, church background, spikes, camera tracking improvements, debugging
-    cheats, healthbars, checkpoints system, web compatibility fixes, assorted asset
-    integration\n\nArmando Navarrete: Blue and green ghosts, boss explosions, fireball
-    animation, additional graveyard decorations, art scale adjustment, ghost sound
-    effects, ghost projectiles, mini boss enemy (art, animation), flying bat, dash
-    sounds, abomination boss sound and explosion, warlock laugh\n\nStebs: Warlock
-    retreating behavior, warlock eldrich blast attack, zombie sounds (idle and alert),
-    shot collision fix\n\nGabriel Cornish: Spooky tree art, atmospheric background
-    particles, graveyard additional enemy placement, AI alert icon improvements,
-    background variations, sounds (shoot and bullet hit)\n\nRob Tunstall: Title music,
-    boss music, level 1 music, zombie audio mixing\n\nChrister \"McFunkypants\" Kaitila:
-    Skeleton sprites, wobbly skeleton animations, exploding pile of bones, flame
-    bullet, zombie ragdoll, particles (decorative dust, rotten brainz, background
-    fog), glowing red eyes, tutorial prompts, titlescreen juice\n\nNic Barkdull:
-    Zombie colliders, additional level design, wall jumping fix, initial camera follow
-    script\n\nBrandon Hillig: Initial title screen scene, placeholder logo, scene
-    loader started\n\nTyler Funk: Gamepad instructions, gamepad shoot/dash bindings,
-    gamepad tooltips\n\nGame developed by members in HomeTeamGameDev.com Apollo Group"
+    graveyard level design, enemy AI, design and animations (warlock, master warlock,
+    zombie), weapon scripting, abomination improvements, church background, spikes,
+    camera tracking improvements, debugging cheats, healthbars, checkpoints system,
+    web compatibility fixes, assorted asset integration\n\nArmando Navarrete: Blue
+    and green ghosts, boss explosions, fireball animation, additional graveyard decorations,
+    art scale adjustment, ghost sound effects, ghost projectiles, mini boss enemy
+    (art, animation), flying bat, dash sounds, abomination boss sound and explosion,
+    warlock laugh\n\nStebs: Warlock retreating behavior, warlock eldrich blast attack,
+    zombie sounds (idle and alert), shot collision fix\n\nGabriel Cornish: Spooky
+    tree art, atmospheric background particles, graveyard additional enemy placement,
+    AI alert icon improvements, background variations, sounds (shoot and bullet hit)\n\nRob
+    Tunstall: Title music, boss music, level 1 music, zombie audio mixing\n\nChrister
+    \"McFunkypants\" Kaitila: Skeleton sprites, wobbly skeleton animations, exploding
+    pile of bones, flame bullet, zombie ragdoll, particles (decorative dust, rotten
+    brainz, background fog), glowing red eyes, tutorial prompts, titlescreen juice\n\nNic
+    Barkdull: Zombie colliders, additional level design, wall jumping fix, initial
+    camera follow script\n\nBrandon Hillig: Initial title screen scene, placeholder
+    logo, scene loader started\n\nTyler Funk: Gamepad instructions, gamepad shoot/dash
+    bindings, gamepad tooltips\n\nGame developed by members in HomeTeamGameDev.com
+    Apollo Group"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
