@@ -369,6 +369,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   currentHealth: 3
+  healthBar: {fileID: 0}
+  prefabToSpawnOnDeath: {fileID: 3104281537827450675, guid: c225b00839948c54888d2a7eca22c44b, type: 3}
 --- !u!95 &5523873878304912293
 Animator:
   serializedVersion: 3
